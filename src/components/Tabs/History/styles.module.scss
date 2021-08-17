@@ -1,0 +1,117 @@
+.historyPage {
+    overflow-y: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .groupBtn{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        width: 95vw;
+        
+        margin: 0.6rem 0 0.6rem 0;
+        
+        border-radius: 5px;
+        
+        background: #fff;
+        
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+        button {
+            font-size: 0.81rem;
+            color: var(--gray-300);
+
+            width: 100%;
+
+            padding: 1.2rem 0;
+
+            background: #fff;
+
+            &:first-child {
+                border-radius: 5px 0 0 5px;
+            }
+            &:last-child {
+                border-radius: 0 5px 5px 0;
+            }
+            &:focus {
+                background: var(--orange-100);
+                font-weight: 500;
+                color: var(--orange-700);
+            }
+        }
+    }
+
+    .resumeCards {
+        display: flex;
+        width: 95vw;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        .resumeCard {
+            width: 100%;
+
+            border-radius: 5px;
+           
+            padding: 0.5rem 0.875rem;
+           
+            background: #fff;
+
+            color: var(--gray-500);
+
+            h1 {
+                font-weight: 700;
+            }
+
+            span {
+                color: var(--gray-300);
+                font-size: 0.875rem;
+            }
+
+            &:first-child {
+                margin-right: 0.5rem;
+            }
+
+            &:last-child {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+
+    .filter {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: 95vw;
+
+        margin-bottom: 1rem;
+
+        button {
+            height: 2.3rem;
+            width: 2.3rem;
+
+            border-radius: 10rem;
+
+            margin-right: 1rem;
+
+            background: var(--orange-100);
+            color: var(--orange-700);
+
+            font-size: 1.3rem;
+        }
+
+        span {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+
+            strong {
+                font-weight: 700;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

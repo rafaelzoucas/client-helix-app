@@ -1,0 +1,105 @@
+.deliveriesPage {
+    width: 100vw;
+    
+    overflow-y: hidden;
+    overflow-x: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0 1rem;
+
+    .groupBtn{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        max-width: 403px;
+        
+        border-radius: 5px;
+        
+        margin: 0.6rem 0 0.6rem 0;
+        
+        background: #fff;
+        
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+        button {
+            font-size: 0.81rem;
+            color: var(--gray-300);
+
+            width: 100%;
+
+            padding: 1.2rem 0;
+
+            background: #fff;
+
+            &:first-child {
+                border-radius: 5px 0 0 5px;
+            }
+            &:last-child {
+                border-radius: 0 5px 5px 0;
+            }
+            &:focus {
+                background: var(--orange-100);
+                font-weight: 500;
+                color: var(--orange-700);
+            }
+
+            .badgeNewDelivery {
+                margin-right: 0.5rem;
+    
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                height: 0.5rem;
+                width: 0.5rem;
+    
+                padding: 0.2rem;
+    
+                font-size: 0.5rem;
+                font-weight: 500;
+                color: #fff;
+    
+                border-radius: 2rem;
+    
+                background: var(--orange-700);
+    
+                z-index: 10;
+            }
+        }
+    }
+
+    .theresNoDelivery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: calc(100vh - 25rem);
+        width: 100%;
+
+        color: var(--gray-300);
+        
+        font-size: 4rem;
+
+        p {
+            margin-top: 2rem;
+            font-weight: 400;
+            font-size: 1.12rem;
+            width: 70%;
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .deliveriesPage {
+        width: calc(100vw - 4rem);
+
+        margin-left: 3rem;
+    }
+}

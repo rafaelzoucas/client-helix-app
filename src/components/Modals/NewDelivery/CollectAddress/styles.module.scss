@@ -1,0 +1,299 @@
+.newDeliveryContainer {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: calc(100vh - 3.7rem);
+
+    padding: 1rem;
+
+    z-index: 5000;
+
+    background: var(--background);
+
+    select {
+        height: 3.5rem;
+        padding-left: 0.5rem;
+
+        background-color: #fff;
+
+        width: 100%;
+
+        border: 1px solid var(--gray-100);
+        border-radius: 5px;
+    }
+
+    .deliveryman {
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            margin-top: 0.5rem;
+            
+            background-color: #fff;
+
+            border-radius: 5px;
+
+            padding: 1rem;
+
+            div {
+                display: flex;
+                align-items: center;
+                font-size: 2.25rem;
+    
+                h1 {
+                    font-size: 0.875rem;
+                    color: var(--gray-400);
+                    margin-left: 0.5rem;
+                }
+            }
+
+        }
+
+        .cardOnPressed {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            margin-top: 0.5rem;
+            
+            background-color: #fff;
+
+            border-radius: 5px;
+            border: 1px solid var(--orange-700);
+
+            padding: 1rem;
+
+            color: var(--orange-700);
+
+            h1 {
+                font-size: 0.875rem;
+                color: var(--gray-400);
+            }
+            
+            div {
+                display: flex;
+                align-items: center;
+                
+                h1 {
+                    color: var(--orange-700);
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        color: var(--orange-700);
+
+        margin-top: 1.5rem;
+
+        margin-bottom: 0.5rem;
+
+        h3 {
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+    }
+
+    .headerContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .backTitle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        h1 {
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--black);
+        }
+
+        button {
+            font-size: 1.3rem;
+            height: 2.3rem;
+            width: 2.3rem;
+            color: var(--orange-700);
+            background: var(--orange-100);
+            border-radius: 10rem;
+        }
+    }
+
+    .prevData {
+        margin-top: 1.5rem;
+
+        span {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+    }
+
+    .collectAddress {
+        display: flex;
+        flex-direction: column;
+
+        .collectAddressCardContainer {
+            max-height: 15rem;
+            overflow-y: scroll;
+            
+            .collectAddressCard {
+                display: flex;
+                flex-direction: row;
+
+                background: #fff;
+
+                border-radius: 5px;
+                
+                
+                margin-top: 0.5rem;
+                
+                .addressInfo {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: initial;
+                    justify-content: space-between;
+                    
+                    padding: 1rem;
+                    
+                    width: 100%;        
+        
+                    strong {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: var(--gray-600);
+                    }
+        
+                    p {
+                        font-size: 0.875rem;
+                        color: var(--gray-500);
+                    }
+        
+                    span {
+                        font-size: 0.75rem;
+                        color: var(--gray-500);
+                    }
+                }
+
+                .menuEllipsis {
+                    width: 2rem;
+                    height: 2rem;
+
+                    color: var(--gray-400);
+                }
+            }
+            
+            .collectAddressCardOnPressed {
+                display: flex;
+                flex-direction: row;
+                
+                background: #fff;
+                
+                border-radius: 5px;
+                
+                border: 1px solid var(--orange-700);
+                
+                margin-top: 0.5rem;
+
+                .addressInfo {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: initial;
+                    justify-content: space-between;
+                    
+                    padding: 1rem;
+                    
+                    width: 100%;        
+        
+                    strong {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: var(--gray-600);
+                    }
+        
+                    p {
+                        font-size: 0.875rem;
+                        color: var(--gray-500);
+                    }
+        
+                    span {
+                        font-size: 0.75rem;
+                        color: var(--gray-500);
+                    }
+                }
+
+                .menuEllipsis {
+                    width: 2rem;
+                    height: 2rem;
+
+                    color: var(--gray-400);
+                }
+            }
+        }
+        
+        button {
+            margin: 0.5rem 0;
+            height: 3rem;
+            width: 100%;
+
+            background: #fff;
+            color: var(--orange-700);
+            font-weight: 500;
+            font-size: 0.875rem;
+
+            border-radius: 5px;
+        }
+    }
+
+    .btnsContainer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        
+        button {
+            width: 100%;
+            height: 3rem;
+
+            border-radius: 5px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .disabled {
+            background: var(--gray-100);
+            color: var(--gray-300);
+        }
+
+        .cancel {
+            background: none;
+
+            color: var(--red);
+        }
+
+        .continue {
+            background: var(--orange-100);
+
+            color: var(--orange-700);
+        }
+    }
+}

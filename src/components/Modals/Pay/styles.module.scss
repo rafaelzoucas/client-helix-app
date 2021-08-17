@@ -1,0 +1,267 @@
+.payContainer {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    // height: 100vh;
+
+    // overflow-y: hidden;
+
+    // padding: 1rem;
+
+    z-index: 5000;
+
+    background: var(--background);    
+
+    section {
+        margin-bottom: 1rem;
+    }
+
+    .headerContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding: 1rem 0 0 1rem;
+
+        .backTitle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        h1 {
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--black);
+        }
+
+        button {
+            font-size: 1.3rem;
+            height: 2.3rem;
+            width: 2.3rem;
+            color: var(--orange-700);
+            background: var(--orange-100);
+            border-radius: 10rem;
+        }
+    }
+
+    .currentInvoice {
+        display: flex;
+        flex-direction: column;
+        // width: 95vw;
+        align-items: flex-start;
+        padding-left: 1rem;
+
+        span {
+           font-size: 0.875rem;
+
+            strong {
+                font-size: 0.875rem;
+                font-weight: 600;
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        button {
+            width: 100%;
+            height: 3rem;
+            
+            margin-top: 1rem;
+            
+            color: #FFF;
+            font-weight: 400;
+
+            border-radius: 5px;
+
+            background: var(--orange-700);
+        }
+    }
+
+    .paymentData {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        // width: 100;
+        padding: 1rem;
+
+        overflow: scroll;
+
+        .pixContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 100%;
+
+            margin: 1.5rem 0 0.5rem 0;
+
+            border-radius: 5px;
+
+            padding: 1rem;
+    
+            background: #fff;
+
+            box-shadow: 0 3px 45px rgba(0, 0, 0, 0.05);
+
+            .titleAndData {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    font-size: 0.75rem;
+                    color: var(--gray-300);
+
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            button {
+                font-size: 0.875rem;
+                color: var(--orange-700);
+                background: none;
+            }
+            :first-child {
+                margin-right: 0.5rem;
+            }
+        }
+
+        .bankDataContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            width: 100%;
+
+            margin-bottom: 0.5rem;
+
+            border-radius: 5px;
+
+            padding: 1rem;
+    
+            background: #fff;
+
+            box-shadow: 0 3px 45px rgba(0, 0, 0, 0.05);
+
+            span {
+                font-size: 0.75rem;
+                color: var(--gray-300);
+            }
+
+            .bankData {
+                
+                .bankDataItem {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    margin-top: 1.5rem;
+
+                    button {
+                        font-size: 0.875rem;
+                        color: var(--orange-700);
+                        background: none;
+                    }
+                    :first-child {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+
+        .paymentVoucherContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            width: 100%;
+
+            border-radius: 5px;
+
+            padding: 1rem;
+    
+            background: #fff;
+
+            box-shadow: 0 3px 45px rgba(0, 0, 0, 0.05);
+
+            span {
+                font-size: 0.75rem;
+                color: var(--gray-300);
+            }
+       
+            .actionButtons {
+                margin-top: 1rem;
+
+                .uploadButton {
+                    background: none;
+                    border: 1px solid var(--orange-700);
+                    margin-bottom: 0.5rem;
+                    padding: 0.75rem;
+
+                    :first-child {
+                        margin-right: 0.5rem;
+                    }
+                }
+
+                input {
+                    width: 100%;
+                    height: 2.5rem;
+                    padding-left: 0.5rem;
+
+                    margin-bottom: 0.5rem;
+    
+                    border: 1px solid var(--gray-100);
+                    border-radius: 5px;
+                }
+
+                button {
+                    width: 100%;
+
+                    margin-top: 0.5rem;
+
+                    padding: 1.5rem;
+
+                    border-radius: 5px;
+                    font-weight: 500;
+                    color: var(--orange-700);
+
+                    background: var(--orange-100);
+                }
+
+                .paymentVoucherUpload {
+                    display: flex;
+                    flex-direction: row;
+    
+                    margin-top: 0.5rem;
+    
+                    padding: 0.625rem;
+    
+                    border-radius: 5px;
+    
+                    background: var(--gray-100);
+    
+                    p {
+                        margin-left: 0.5rem;
+                        color: var(--orange-700);
+                        
+                        font-size: 0.875rem;
+                    }
+    
+                    .removeFile {
+                        margin-left: auto;
+    
+                        color: var(--orange-700);
+                    }
+                }
+            }
+        }
+    }
+}
