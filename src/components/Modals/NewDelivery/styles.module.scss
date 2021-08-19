@@ -175,7 +175,12 @@
         .cancel {
             background: none;
 
-            color: var(--red);
+            color: var(--red-300);
+        }
+
+        .recharge {
+            background-color: var(--red-300);
+            color: #fff;
         }
 
         .continue {

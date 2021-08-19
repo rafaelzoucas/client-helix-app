@@ -76,7 +76,8 @@ export default function NewDelivery({onClose = () => {}}) {
 
                 <section className={styles.btnsContainer}>
                     <button className={styles.cancel}>Cancelar</button>
-                    <button className={styles.continue} onClick={openCollectAddressModal}>Escolher endereço de coleta</button>
+                    {/* <button className={styles.continue} onClick={openCollectAddressModal}>Escolher endereço de coleta</button> */}
+                    <button className={styles.recharge}>Saldo insuficiente: R$ 0,00. Clique para recarregar</button>
                     {/* <button className={styles.disabled}>Preencha todas as informações para continuar</button> */}
                 </section>
             </div>
