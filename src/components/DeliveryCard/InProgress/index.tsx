@@ -73,33 +73,37 @@ export default function InProgress() {
                         />
                     </section>
         
-                    <section id="status" className={styles.statusContainer} style={{display: `${displayDeliveryCardItems}`}}>
-                        <div className={styles.statusBar}>
+                    <section id="status" className={styles.statusContainer}>
+                        <div className={styles.statusBar} style={{display: `${displayDeliveryCardItems}`}}>
+                            <div className={styles.findingDeliverymanStatus}>
+                                <div className={styles.findingDeliverymanCurrentStatus}></div>
+                            </div>
+        
                             <div className={styles.waitingDeliverymanStatus}>
                                 <div className={styles.waitingDeliverymanCurrentStatus}></div>
                             </div>
-        
+
                             <div className={styles.deliveryInProgressStatus}>
                                 <div className={styles.deliveryInProgressCurrentStatus}></div>
                             </div>
                         </div>
         
-                        <p>O entregador está retornando para corrigir o imprevisto...</p>
+                        <p>Chegada prevista às 20:15</p>
         
-                        <span>30 minutos e 57 segundos</span>
+                        <span>30:00</span>
                     </section>
         
                     <section id="deliveryMan" className={styles.deliverymanContainer} style={{display: `${displayDeliveryCardItems}`}}>
-                        <h3 className={styles.titleDelivery}>
+                        {/* <h3 className={styles.titleDelivery}>
                             <FontAwesomeIcon icon="motorcycle" />
                             <strong>Informações do entregador</strong>
-                        </h3>
+                        </h3> */}
         
                         <div className={styles.profileLink} onClick={openModalDeliverymanProfile}>
                             <div className={styles.info}>
                                 <Image 
-                                    width={32} 
-                                    height={32} 
+                                    width={28} 
+                                    height={28} 
                                     src="/img/icons/profile-user.svg"
                                     alt="Profile"
                                 />
@@ -151,9 +155,17 @@ export default function InProgress() {
                     <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
                         <h3 className={styles.titleDelivery}>
                             <FontAwesomeIcon icon="coins" />
-                            <strong>Forma de pagamento</strong>
+                            <strong>Forma de recebimento</strong>
                         </h3>
                         <p>Cartão</p>
+                    </section>
+                    
+                    <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
+                        <h3 className={styles.titleDelivery}>
+                            <FontAwesomeIcon icon="dollar-sign" />
+                            <strong>Valor a pagar ao entregador</strong>
+                        </h3>
+                        <p>R$ 6,75</p>
                     </section>
         
                     <div id="actionButtons" className={styles.actionButtonsContainer}>        

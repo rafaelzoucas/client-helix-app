@@ -30,26 +30,35 @@ export default function NewDelivery({onClose = () => {}}) {
                 </section> 
 
                 <section className={styles.formContainer}>
-                    <div className={styles.title}>
-                        <FontAwesomeIcon icon="map-marker-alt" />
-                        <h3>Endereço da entrega</h3>
-                    </div>
-
                     <form action="">
-                        <span>Rua com número</span>
-                        <input type="text" placeholder="Rua do Endereço Do Cliente, 123" />
+                        <span>Rua</span>
+                        <input type="text" placeholder="Rua do Endereço Do Cliente" />
+
+                        <div>
+                            <div>
+                                <span>Número</span>
+                                <input type="text" placeholder="123" />
+                            </div>
+
+                            <div className={styles.cep}>
+                                <span>CEP</span>
+                                <input type="text" placeholder="19800-000" disabled />
+                            </div>
+                        </div>
+
                         <span>Referência (opcional)</span>
                         <input type="text" placeholder="Próximo ao Bar do Zé" />
+
                         <span>Observações (opcional)</span>
-                        <textarea placeholder="Preciso que busque um produto na loja Exemplo e traga aqui" />
+                        <input placeholder="Ap 12, cobrar R$ 50,00" />
                     </form>
                 </section>
 
                 <section className={styles.paymentContainer}>
-                    <div className={styles.title}>
+                    {/* <div className={styles.title}>
                         <FontAwesomeIcon icon="coins" />
-                        <h3>Forma de pagamento</h3>
-                    </div>
+                        <h3>Forma de recebimento</h3>
+                    </div> */}
 
                     <div className={styles.radioBtnContainer}>
                         <div className={styles.radioBtnCardOnPressed}> {/*Quando clica muda para radioBtnCardOnPressed */}
@@ -74,12 +83,24 @@ export default function NewDelivery({onClose = () => {}}) {
                     </div>   
                 </section>
 
-                <section className={styles.btnsContainer}>
-                    <button className={styles.cancel}>Cancelar</button>
-                    {/* <button className={styles.continue} onClick={openCollectAddressModal}>Escolher endereço de coleta</button> */}
-                    <button className={styles.recharge}>Saldo insuficiente: R$ 0,00. Clique para recarregar</button>
-                    {/* <button className={styles.disabled}>Preencha todas as informações para continuar</button> */}
+                <section className={styles.confirm}>
+                    <div className={styles.distanceAndPrice}>
+                        <div className={styles.distance}>
+                            <span>Distância</span>
+                            <p>12 Km</p>
+                        </div>
+
+                        <strong>R$ <h3>9,75</h3></strong>
+                    </div>
+
+                    <div className={styles.btnsContainer}>
+                        <button className={styles.cancel}>Cancelar</button>
+                        <button className={styles.continue} onClick={openCollectAddressModal}>Escolher endereço de coleta</button>
+                        {/* <button className={styles.recharge}>Saldo insuficiente: R$ 0,00. Clique para recarregar</button> */}
+                        {/* <button className={styles.disabled}>Preencha todas as informações para continuar</button> */}
+                    </div>
                 </section>
+
             </div>
             {isCollectAddressVisible ? <CollectAddress onClose={() => setIsCollectAddressVisible(false)} /> : null}
         </>

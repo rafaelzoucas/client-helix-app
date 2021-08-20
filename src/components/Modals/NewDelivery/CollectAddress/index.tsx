@@ -46,12 +46,12 @@ export default function CollectAddress({onClose = () => {}}) {
                     </div>
                     <span>Endereço da entrega</span>
                     <p>Rua Do Endereço Da Entrega, 123 - Assis SP</p>
-                    <span>Referência</span>
+                    {/* <span>Referência</span>
                     <p>Próximo ao Bar do Zé</p>
                     <span>Forma de pagamento</span>
                     <p>Cartão</p>
                     <span>Descrição</span>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus in aliquam nostrum.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus in aliquam nostrum.</p> */}
                 </section>
 
                 <section className={styles.collectAddress}>
@@ -121,10 +121,28 @@ export default function CollectAddress({onClose = () => {}}) {
                     </div>
                 </section>
 
-                <section className={styles.btnsContainer}>
+                {/* <section className={styles.btnsContainer}>
                     <button className={styles.cancel}>Cancelar</button>
                     <button className={styles.continue}>Solicitar entregador</button>
-                    {/* <button className={styles.disabled}>Selecione o endereço de coleta</button> */}
+                    <button className={styles.disabled}>Selecione o endereço de coleta</button>
+                </section> */}
+
+                <section className={styles.confirm}>
+                    <div className={styles.distanceAndPrice}>
+                        <div className={styles.distance}>
+                            <span>Distância</span>
+                            <p>12Km</p>
+                        </div>
+
+                        <strong>R$ <h3>9,75</h3></strong>
+                    </div>
+
+                    <div className={styles.btnsContainer}>
+                        <button className={styles.cancel}>Cancelar</button>
+                        <button className={styles.continue}>Solicitar entregador</button>
+                        {/* <button className={styles.recharge}>Saldo insuficiente: R$ 0,00. Clique para recarregar</button> */}
+                        {/* <button className={styles.disabled}>Preencha todas as informações para continuar</button> */}
+                    </div>
                 </section>
             </div>
 
