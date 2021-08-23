@@ -176,7 +176,7 @@
             background: var(--gray-100);
             
             .waitingDeliverymanCurrentStatus{
-                width: 60%;
+                animation: progress 2s infinite;
                 height: 0.3rem;
             
                 background: var(--green-500);
@@ -196,6 +196,14 @@
                 height: 0.3rem;
             
                 background: var(--green-500);
+            }
+        }
+
+        @keyframes progress {
+            from{
+                width: 0;
+            }to{
+                width: 100%;
             }
         }
     }
