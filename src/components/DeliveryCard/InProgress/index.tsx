@@ -173,12 +173,16 @@ export default function InProgress() {
                             <button onClick={openModalIssue} className={styles.issueBtn}>
                                 Imprevisto
                             </button>
-        
+
+                            <button onClick={openModalIssue} className={styles.finalize}>
+                                Finalizar entrega
+                            </button>
+
                             {/*class issueRequestBtnViewed quando for visualizada*/}
-                            <button onClick={openIssueRequest} className={styles.issueRequestBtn}> 
+                            {/* <button onClick={openIssueRequest} className={styles.issueRequestBtn}> 
                                 <FontAwesomeIcon icon="exclamation-circle" />
                                 <span>Houve 1 imprevisto</span>
-                            </button>
+                            </button> */}
                         </div>
                     </div>
         

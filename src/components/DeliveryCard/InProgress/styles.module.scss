@@ -228,7 +228,22 @@
 
                 font-weight: 500;
 
+                width: 50%;
+            }
+
+            .finalize {
+                padding: 1rem ;
+
+                border-radius: 5px;
+
+                color: var(--green-700);
+                background: var(--green-100);
+
+                font-weight: 500;
+
                 width: 100%;
+
+                margin-left: 0.5rem;
             }
 
             .issueRequestBtn {
