@@ -1,13 +1,14 @@
 import React from 'react'
+import { useState } from 'react'
+
 import styles from './styles.module.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import OnHold from '../../DeliveryCard/OnHold'
+import TryAgain from '../../DeliveryCard/OnHold/TryAgain'
 import InProgress from '../../DeliveryCard/InProgress'
 import Finished from '../../DeliveryCard/Finished'
-import { useState } from 'react'
 import Canceled from '../../DeliveryCard/Canceled'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import TryAgain from '../../DeliveryCard/OnHold/TryAgain'
 
 export default function Home() {
   const [currentTab, setCurretTab] = useState('inProgress')
@@ -51,8 +52,8 @@ export default function Home() {
         
         <div className={styles.deliveriesContainer}>
           <section style={{display: `${displayOnHoldDeliveries}`}}>
-            <OnHold />
-            <TryAgain />
+            {/* <OnHold />
+            <TryAgain /> */}
 
             {/* ------- ativar quando estiver com cadastro em análise -------- */}
             {/* <div className={styles.theresNoDelivery}>
@@ -66,9 +67,18 @@ export default function Home() {
             {/* <div className={styles.theresNoDelivery}>
               <FontAwesomeIcon icon="motorcycle" />
               <p>
-                Não há entregas em espera.
+                Não há entregas em espera no momento.
               </p> 
             </div> */}
+
+            {/* -------- ativar quando saldo estiver insuficiente ---------- */}
+            <div className={styles.theresNoDelivery}>
+              <FontAwesomeIcon icon="ban" />
+              <p>
+                O seu saldo é insuficiente para solicitar novas entregas. 
+                <button>Adicionar crédito</button>
+              </p> 
+            </div>
           </section>
           <section style={{display: `${displayInProgressDeliveries}`}}>
             <InProgress />

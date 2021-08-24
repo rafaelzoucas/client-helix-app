@@ -23,19 +23,9 @@ export default function Finance() {
     <>
       <div className={styles.financePage}>
         <section className={styles.currentInvoice}>
-          <span>Fatura atual</span>
+          <span>Saldo atual</span>
           <h1>R$ 79,00</h1>
-          <span>
-            de
-            <strong>
-              {' 31/05 '} 
-            </strong>
-            até
-            <strong>
-              {' 06/06'}
-            </strong>
-          </span>
-          <button onClick={openModalPay}>Efetuar pagamento</button>
+          <button onClick={openModalPay}>Adicionar saldo</button>
         </section>
 
         <section className={styles.timeline}>
@@ -44,8 +34,8 @@ export default function Finance() {
             <div className={styles.pendingPayment} />
 
             <div className={styles.titleDescription}>
-                <strong>Pagamento pendente</strong>
-                <p>Este pagamento está em análise.</p>
+                <strong>Pagamento em análise</strong>
+                <p>Pode demorar até 1 dia útil para ser reconhecido.</p>
             </div>
 
             <span>19 Abr 2021</span>
@@ -56,7 +46,7 @@ export default function Finance() {
 
             <div className={styles.titleDescription}>
                 <strong>Pagamento recebido</strong>
-                <p>Você pagou R$ 79,00. Obrigado!</p>
+                <p>Você adicionou R$ 79,00 ao seu saldo. Obrigado!</p>
             </div>
 
             <span>19 Abr 2021</span>
@@ -66,8 +56,8 @@ export default function Finance() {
             <div className={styles.overdueInvoice} />
 
             <div className={styles.titleDescription}>
-                <strong>Fatura vencida</strong>
-                <p>Para desbloquear a utilização do nosso sistema, basta efetuar o pagamento.</p>
+                <strong>Saldo insuficiente</strong>
+                <p>O seu saldo atual é de R$ 0,00. Faça uma recarga para continuar utilizando os nossos serviços.</p>
             </div>
 
             <span>19 Abr 2021</span>
@@ -77,14 +67,11 @@ export default function Finance() {
               <div className={styles.closeInvoice} />
 
               <div className={styles.titleDescription}>
-                  <strong>Fatura de 31/05 até 06/06 fechada</strong>
-                  <p>Vencimento em 18/06. Evite o bloqueio efetuando o pagamento em dia.</p>
+                  <strong>Crédito baixo</strong>
+                  <p>O seu saldo atual é de R$ 10,00. Não se esqueça de recarregar.</p>
               </div>
 
-              <div className={styles.dateAndButton}>
-                <span>19 Abr 2021</span>
-                <FontAwesomeIcon icon="angle-right" />
-              </div>
+              <span>19 Abr 2021</span>
           </div>
 
           <div className={styles.timelineItem}>
