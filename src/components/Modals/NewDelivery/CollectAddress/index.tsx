@@ -40,10 +40,10 @@ export default function CollectAddress({onClose = () => {}}) {
                 </section> 
 
                 <section className={styles.prevData}>
-                    <div className={styles.title}>
+                    {/* <div className={styles.title}>
                         <FontAwesomeIcon icon="box-open" />
                         <h3>Informações da entrega</h3>
-                    </div>
+                    </div> */}
                     <span>Endereço da entrega</span>
                     <p>Rua Do Endereço Da Entrega, 123 - Assis SP</p>
                     {/* <span>Referência</span>
@@ -128,13 +128,37 @@ export default function CollectAddress({onClose = () => {}}) {
                 </section> */}
 
                 <section className={styles.confirm}>
+                    <p>Saldo atual: <strong>R$ 20,00</strong></p> 
                     <div className={styles.distanceAndPrice}>
-                        <div className={styles.distance}>
+                        <div className={styles.item}>
                             <span>Distância</span>
-                            <p>12Km</p>
+                            <p>12 Km</p>
                         </div>
 
-                        <strong>R$ <h3>9,75</h3></strong>
+                        <div className={styles.item}>
+                            <span>Para o entregador</span>
+                            <p>R$ 8,50</p>
+                        </div>
+
+                        {/* <div className={styles.item}>
+                            <span>Saldo disponível</span>
+                            <p>R$ 20,00</p>
+                        </div> */}
+
+                        <div className={styles.item}>
+                            <span>Saldo a ser descontado</span>
+                            <p>R$ 1,00</p>
+                        </div>
+
+                        <div className={styles.item}>
+                            <span>Total</span>
+                            <strong>R$ <h3>9,50</h3></strong>
+                        </div>                     
+                        <div className={styles.distance}>
+                        </div>
+
+                        <div className={styles.price}>
+                        </div>
                     </div>
 
                     <div className={styles.btnsContainer}>

@@ -5,13 +5,15 @@
     left: 0;
 
     width: 100vw;
-    height: calc(100vh - 3.7rem);
+    height: 62vh;
 
     padding: 1rem;
 
     z-index: 5000;
 
     background: var(--background);
+
+    overflow: scroll;
 
     select {
         height: 3.5rem;
@@ -275,25 +277,27 @@
 
         background-color: #fff;
 
+        color: var(--gray-500);
+
         border-radius: 10px 10px 0 0;
         box-shadow: 0 -5px 15px rgba($color: #000000, $alpha: 0.1);
 
+        strong {
+            font-weight: 600;
+        }
+
         .distanceAndPrice {
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
 
-            .distance {
-                span {
-                    font-size: 0.875rem;
-                }
+            span {
+                font-size: 0.75rem;
+            }
 
-                p {
-                    font-size: 1.125rem;
-                    font-weight: 500;
-                    color: var(--gray-500);
-                }
+            p {
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--gray-500);
             }
 
             strong {
@@ -311,6 +315,68 @@
                     font-weight: 600;
                 }
             }
+
+            .item {
+                margin-top: 0.5rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .distance {
+                justify-content: space-between;
+
+                span {
+                    font-size: 0.75rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: var(--gray-500);
+                }
+
+                strong {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+    
+                    font-weight: 600;
+                    color: var(--gray-500);
+                    font-size: 1.125rem;
+    
+                    h3 {
+                        margin-left: 0.25rem;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+                }
+                
+            }
+            
+            .price {
+                text-align: right;
+                
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+
+                span {
+                    margin-top: 0.5rem;
+                    font-size: 0.75rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: var(--gray-500);
+                }
+
+                
+            }
+
         }
 
         .btnsContainer {

@@ -40,9 +40,9 @@ export default function NewDelivery({onClose = () => {}}) {
                                 <input type="text" placeholder="123" />
                             </div>
 
-                            <div className={styles.cep}>
-                                <span>CEP</span>
-                                <input type="text" placeholder="19800-000" disabled />
+                            <div className={styles.comp}>
+                                <span>Complemento (opcional)</span>
+                                <input type="text" placeholder="Ap 12" />
                             </div>
                         </div>
 
@@ -50,7 +50,7 @@ export default function NewDelivery({onClose = () => {}}) {
                         <input type="text" placeholder="Próximo ao Bar do Zé" />
 
                         <span>Observações (opcional)</span>
-                        <input placeholder="Ap 12, cobrar R$ 50,00" />
+                        <input placeholder="R$ 10,00 de troco" />
                     </form>
                 </section>
 
@@ -83,24 +83,11 @@ export default function NewDelivery({onClose = () => {}}) {
                     </div>   
                 </section>
 
-                <section className={styles.confirm}>
-                    <div className={styles.distanceAndPrice}>
-                        <div className={styles.distance}>
-                            <span>Distância</span>
-                            <p>12 Km</p>
-                        </div>
-
-                        <strong>R$ <h3>9,75</h3></strong>
-                    </div>
-
-                    <div className={styles.btnsContainer}>
-                        <button className={styles.cancel}>Cancelar</button>
-                        <button className={styles.continue} onClick={openCollectAddressModal}>Escolher endereço de coleta</button>
-                        {/* <button className={styles.recharge}>Saldo insuficiente: R$ 0,00. Clique para recarregar</button> */}
-                        {/* <button className={styles.disabled}>Preencha todas as informações para continuar</button> */}
-                    </div>
-                </section>
-
+                <div className={styles.btnsContainer}>
+                    <button className={styles.cancel}>Cancelar</button>
+                    <button className={styles.continue} onClick={openCollectAddressModal}>Escolher endereço de coleta</button>
+                    {/* <button className={styles.disabled}>Preencha todas as informações para continuar</button> */}
+                </div>
             </div>
             {isCollectAddressVisible ? <CollectAddress onClose={() => setIsCollectAddressVisible(false)} /> : null}
         </>
