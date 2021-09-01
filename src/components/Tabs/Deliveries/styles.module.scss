@@ -10,6 +10,10 @@
 
     padding: 0 1rem;
 
+    aside {
+        display: none;
+    }
+
     .groupBtn{
         display: flex;
         flex-direction: row;
@@ -111,10 +115,600 @@
 }
 
 @media (min-width: 1024px) {
-
     .deliveriesPage {
-        width: calc(100vw - 4rem);
+        display: flex;
+        flex-direction: row;
+        align-items: unset;
 
-        margin-left: 3rem;
+        aside {
+            margin-top: 0.5rem;
+            margin-left: 4rem;
+
+            width: 50%;
+            max-width: 400px;
+            height: auto;
+            max-height: 485px;
+            
+            padding: 1rem;
+            
+            display: block;
+            
+            background-color: #fff;
+            
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.05);
+            
+            border-radius: 5px;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                
+                div {
+                    display: flex;
+                    flex-direction: row;
+        
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        width: 50%;
+                    }
+                    
+                    .comp {
+                        margin-left: 0.5rem;
+                        width: calc(50% - 0.5rem);
+                    }
+                }
+                
+                span {
+                    margin: 0.5rem 0 0.2rem 0;
+                    font-size: 0.75rem;
+                    color: var(--gray-500);
+                }
+    
+                input {
+                    height: 2.5rem;
+                    padding-left: 0.5rem;
+    
+                    border: 1px solid var(--gray-100);
+                    border-radius: 5px;
+                }
+    
+                textarea {
+                    height: 5rem;
+                    padding: 0.5rem;
+    
+                    border: 1px solid var(--gray-100);
+                    border-radius: 5px;
+                }
+            }
+            .paymentContainer {
+                display: flex;
+                flex-direction: column;
+        
+                .radioBtnContainer {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+        
+                    margin-top: 1rem;
+        
+                    .radioBtnCard {
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+        
+                        width: calc(85vw / 4);
+                        min-height: 5rem;
+                        
+                        border-radius: 5px;
+                        
+                        font-size: 2rem;
+                        
+                        color: var(--gray-500);
+                        
+                        padding: 0.625rem;
+                        
+                        p {
+                            font-size: 0.625rem;
+                            margin-top: 0.5rem;
+                        }
+                    }
+                    
+                    .radioBtnCardOnPressed {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+        
+                        width: calc(85vw / 4);
+                        min-height: 5rem;
+                        
+                        background: #fff;
+                        
+                        border: 1px solid var(--orange-700);
+                        border-radius: 5px;
+                        
+                        font-size: 2rem;
+                        
+                        color: var(--orange-700);
+                        
+                        padding: 0.625rem;
+                        
+                        p {
+                            font-size: 0.625rem;
+                            margin-top: 0.5rem;
+                        }
+                    }
+                }
+            }
+        
+            .btnsContainer {
+                display: flex;
+                flex-direction: row;
+                margin-top: 1rem;
+                
+                button {
+                    width: 100%;
+                    height: 3.5rem;
+        
+                    border-radius: 10px;
+                    font-weight: 500;
+                    margin-bottom: 0.5rem;
+        
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                }
+        
+                .disabled {
+                    background: var(--gray-100);
+                    color: var(--gray-300);
+                }
+        
+                .cancel {
+                    background: none;
+                    // border: 1px solid var(--red-300);
+        
+                    color: var(--red-300);
+                }
+        
+                .recharge {
+                    background-color: var(--red-300);
+                    color: #fff;
+                }
+        
+                .continue {
+                    width: 200%;
+                    background: var(--orange-100);
+        
+                    color: var(--orange-700);
+        
+                    margin-left: 0.5rem;
+                }
+            }
+
+
+        }
+
+        select {
+            height: 3.5rem;
+            padding-left: 0.5rem;
+    
+            background-color: #fff;
+    
+            width: 100%;
+    
+            border: 1px solid var(--gray-100);
+            border-radius: 5px;
+        }
+    
+        .deliveryman {
+            max-height: 15rem;
+            overflow-y: scroll;
+    
+            .card {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                margin-top: 0.5rem;
+                
+                background-color: #fff;
+    
+                border-radius: 5px;
+    
+                padding: 1rem;
+    
+                div {
+                    display: flex;
+                    align-items: center;
+                    font-size: 2.25rem;
+        
+                    h1 {
+                        font-size: 0.875rem;
+                        color: var(--gray-400);
+                        margin-left: 0.5rem;
+                    }
+                }
+    
+            }
+    
+            .cardOnPressed {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                margin-top: 0.5rem;
+                
+                background-color: #fff;
+    
+                border-radius: 5px;
+                border: 1px solid var(--orange-700);
+    
+                padding: 1rem;
+    
+                color: var(--orange-700);
+    
+                h1 {
+                    font-size: 0.875rem;
+                    color: var(--gray-400);
+                }
+                
+                div {
+                    display: flex;
+                    align-items: center;
+                    
+                    h1 {
+                        color: var(--orange-700);
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+        }
+    
+        .title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+    
+            color: var(--orange-700);
+    
+            margin-top: 1.5rem;
+    
+            margin-bottom: 0.5rem;
+    
+            h3 {
+                font-size: 0.875rem;
+                margin-left: 0.5rem;
+            }
+        }
+    
+        .headerContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            .backTitle {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            h1 {
+                margin-left: 0.5rem;
+                font-size: 1.2rem;
+                color: var(--black);
+            }
+    
+            button {
+                font-size: 1.3rem;
+                height: 2.3rem;
+                width: 2.3rem;
+                color: var(--orange-700);
+                background: var(--orange-100);
+                border-radius: 10rem;
+            }
+        }
+    
+        .prevData {
+            margin-top: 1.5rem;
+    
+            span {
+                font-size: 0.75rem;
+                color: var(--gray-500);
+            }
+    
+            p {
+                font-size: 0.875rem;
+                color: var(--gray-600);
+            }
+        }
+    
+        .collectAddress {
+            display: flex;
+            flex-direction: column;
+    
+            .collectAddressCardContainer {
+                max-height: 15rem;
+                overflow-y: scroll;
+                
+                .collectAddressCard {
+                    display: flex;
+                    flex-direction: row;
+    
+                    background: #fff;
+    
+                    border-radius: 5px;
+                    
+                    
+                    margin-top: 0.5rem;
+                    
+                    .addressInfo {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: initial;
+                        justify-content: space-between;
+                        
+                        padding: 1rem;
+                        
+                        width: 100%;        
+            
+                        strong {
+                            font-size: 1rem;
+                            font-weight: 500;
+                            color: var(--gray-600);
+                        }
+            
+                        p {
+                            font-size: 0.875rem;
+                            color: var(--gray-500);
+                        }
+            
+                        span {
+                            font-size: 0.75rem;
+                            color: var(--gray-500);
+                        }
+                    }
+    
+                    .menuEllipsis {
+                        width: 2rem;
+                        height: 2rem;
+    
+                        color: var(--gray-400);
+                    }
+                }
+                
+                .collectAddressCardOnPressed {
+                    display: flex;
+                    flex-direction: row;
+                    
+                    background: #fff;
+                    
+                    border-radius: 5px;
+                    
+                    border: 1px solid var(--orange-700);
+                    
+                    margin-top: 0.5rem;
+    
+                    .addressInfo {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: initial;
+                        justify-content: space-between;
+                        
+                        padding: 1rem;
+                        
+                        width: 100%;        
+            
+                        strong {
+                            font-size: 1rem;
+                            font-weight: 500;
+                            color: var(--gray-600);
+                        }
+            
+                        p {
+                            font-size: 0.875rem;
+                            color: var(--gray-500);
+                        }
+            
+                        span {
+                            font-size: 0.75rem;
+                            color: var(--gray-500);
+                        }
+                    }
+    
+                    .menuEllipsis {
+                        width: 2rem;
+                        height: 2rem;
+    
+                        color: var(--gray-400);
+                    }
+                }
+            }
+            
+            button {
+                margin: 0.5rem 0;
+                height: 3rem;
+                width: 100%;
+    
+                background: #fff;
+                color: var(--orange-700);
+                font-weight: 500;
+                font-size: 0.875rem;
+    
+                border-radius: 5px;
+            }
+        }
+    
+        .confirm {
+            // position: fixed;
+            
+            // bottom: 0;
+            // left: 0;
+    
+            width: 100%;
+            padding: 1rem;
+    
+            background-color: #fff;
+    
+            color: var(--gray-500);
+    
+            border-radius: 10px;
+            box-shadow: 0 -5px 15px rgba($color: #000000, $alpha: 0.1);
+    
+            strong {
+                font-weight: 600;
+            }
+    
+            .distanceAndPrice {
+                display: flex;
+                flex-direction: column;
+    
+                span {
+                    font-size: 0.75rem;
+                }
+    
+                p {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: var(--gray-500);
+                }
+    
+                strong {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+    
+                    font-weight: 600;
+                    color: var(--gray-500);
+                    font-size: 1.125rem;
+    
+                    h3 {
+                        margin-left: 0.25rem;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                    }
+                }
+    
+                .item {
+                    margin-top: 0.5rem;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+    
+                .distance {
+                    justify-content: space-between;
+    
+                    span {
+                        font-size: 0.75rem;
+                    }
+    
+                    p {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: var(--gray-500);
+                    }
+    
+                    strong {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: baseline;
+        
+                        font-weight: 600;
+                        color: var(--gray-500);
+                        font-size: 1.125rem;
+        
+                        h3 {
+                            margin-left: 0.25rem;
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                        }
+                    }
+                    
+                }
+                
+                .price {
+                    text-align: right;
+                    
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+    
+    
+                    span {
+                        margin-top: 0.5rem;
+                        font-size: 0.75rem;
+                    }
+    
+                    p {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: var(--gray-500);
+                    }
+    
+                    
+                }
+    
+            }
+    
+            .btnsContainer {
+                display: flex;
+                flex-direction: row;
+                margin-top: 1rem;
+                
+                button {
+                    width: 100%;
+                    height: 3.5rem;
+        
+                    border-radius: 10px;
+                    font-weight: 500;
+                    margin-bottom: 0.5rem;
+        
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                }
+        
+                .disabled {
+                    background: var(--gray-100);
+                    color: var(--gray-300);
+                }
+        
+                .cancel {
+                    background: none;
+                    // border: 1px solid var(--red-300);
+        
+                    color: var(--red-300);
+                }
+        
+                .recharge {
+                    background-color: var(--red-300);
+                    color: #fff;
+                }
+        
+                .continue {
+                    width: 200%;
+                    background: var(--orange-100);
+        
+                    color: var(--orange-700);
+    
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+
+        main {
+            width: 50%;
+            margin-left: 1rem;
+
+            .deliveriesContainer {
+                width: 100%;
+                // background-color: gray;
+            }
+        }
     }
 }

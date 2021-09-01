@@ -50,7 +50,7 @@ export default function Header(props) {
                 <h1>{props.title}</h1> 
 
                 <div className={styles.buttonsHeader}>
-                    <div className={styles.searchContainer}>
+                    {/* <div className={styles.searchContainer}>
                         <input 
                             type="text" 
                             placeholder="Pesquisar" 
@@ -63,6 +63,12 @@ export default function Header(props) {
                         <button onClick={showHideSearchInput} className={styles.searchBtn}>
                             <FontAwesomeIcon icon="search" className={styles.faIcon} />
                         </button>
+                    </div> */}
+
+                    {/* Variações de balance, balancePositive e balanceNegative */}
+                    <div className={styles.balance}>
+                        <span>Saldo atual</span>
+                        <p>R$ 0,00</p>
                     </div>
 
                     <button onClick={openNotifications} className={styles.notificationButton}>
@@ -77,12 +83,12 @@ export default function Header(props) {
                         <FontAwesomeIcon icon="bell"  className={styles.faIcon} />
                     </button>
 
-                    <button 
+                    {/* <button 
                         onClick={openModalNewDelivery} 
                         className={styles.newDelivery}
                     >
                         <span>+</span>
-                    </button>
+                    </button> */}
 
                     {isModalNewDeliveryVisible ? (
                         <NewDelivery 

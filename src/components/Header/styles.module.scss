@@ -74,6 +74,53 @@
                 z-index: 10;
             }
         }
+
+        .balance {
+            text-align: right;
+            margin-right: 1rem;
+            color: var(--gray-500);
+
+            span {
+                font-size: 0.75rem;
+            }
+
+            p {
+                font-weight: 500;
+
+            }
+        }
+        
+        .balanceNegative{
+            text-align: right;
+            margin-right: 1rem;
+            color: var(--gray-500);
+            
+            span {
+                font-size: 0.75rem;
+            }
+            
+            p {
+                color: var(--red-300);
+                font-weight: 500;
+
+            }
+        }
+
+        .balancePositive{
+            text-align: right;
+            margin-right: 1rem;
+            color: var(--gray-500);
+            
+            span {
+                font-size: 0.75rem;
+            }
+            
+            p {
+                color: var(--green-700);
+                font-weight: 500;
+
+            }
+        }
         
         button{
             background-color: var(--orange-100);

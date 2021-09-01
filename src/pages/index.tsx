@@ -151,6 +151,9 @@ export default function Home() {
             />
           ) : null}
 
+
+
+
           {/* ------TABLINKS PARA DESKTOP------ */}
           <div className={styles.tabLinksDesktop}>
             <button 

@@ -17,18 +17,8 @@ export default function Pay({onClose = () => {}}) {
             </section> 
 
             <section className={styles.currentInvoice}>
-                <span>Fatura atual</span>
+                <span>Saldo atual</span>
                 <h1>R$ 79,00</h1>
-                <span>
-                de
-                <strong>
-                    {' 31/05 '}
-                </strong>
-                até
-                <strong>
-                    {' 06/06'}
-                </strong>
-                </span>
             </section>
 
             <section className={styles.paymentData}>

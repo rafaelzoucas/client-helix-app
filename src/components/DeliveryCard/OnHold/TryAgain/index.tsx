@@ -102,6 +102,77 @@ export default function OnHold() {
                     </div>
                 </div>
             </div>
+
+            {/* ------------------ DESKTOP ----------------- */}
+            <div className={styles.deliveryCardDesktopContainer}>
+                <div className={`${styles.container} ${styles.col8}`}>
+                <section 
+                        id="header" 
+                        className={`${styles.headerContainer} ${styles.col1}`}
+                    >
+                        <span className={styles.dateTime}>Hoje - 14:53</span>
+
+                        <span 
+                            id="idDelivery" 
+                            className={`${styles.titleDelivery} ${styles.idDelivery}`}
+                        >
+                            <FontAwesomeIcon icon="hashtag" />
+                            <strong>1973</strong>
+                        </span>
+                    </section>
+
+                    <section 
+                        id="address" 
+                        className={`${styles.addressContainer} ${styles.col4}`}
+                    >
+                        <p>Rua Do Endereço Da Entrega, 345</p>
+
+                        <span className={styles.reference}>Próximo ao Bar Do Zé, Casa amarela de portão azul.</span>
+                    </section>
+
+                    <section 
+                        id="description" 
+                        className={`${styles.descriptionContainer} ${styles.col4}`}
+                    >
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ullam quas praesentium animi placeat beatae magni dolore a maiores.</p>
+
+                    </section>
+
+                    <section 
+                        id="payment"
+                        className={styles.col2}    
+                    >
+                        <p>Cartão</p>
+                    </section>
+                </div>
+
+                <section id="status" className={styles.statusContainer}>
+                <div className={styles.labelCanceled}>
+                        <FontAwesomeIcon icon="exclamation-circle" />
+                        <span>{'Não há entregadores disponíveis'}</span>
+                    </div>
+                    <div className={styles.labelTime}>
+                        <FontAwesomeIcon icon="clock" />
+                        <span>{'00:55'}</span>
+                    </div>
+                </section>
+
+                <div 
+                    id="actionButtons" 
+                    className={`${styles.actionButtonsContainer}`}
+                >
+                    <div className={styles.progressBtns}>
+                        <button className={styles.tryAgainBtn}>Tentar novamente</button>
+
+                        <button 
+                            className={styles.cancelBtn} 
+                            // onClick={openConfirmCancel}
+                        >
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
