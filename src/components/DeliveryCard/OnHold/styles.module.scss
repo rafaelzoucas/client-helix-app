@@ -4,7 +4,7 @@
 
     width: 95vw;
 
-    padding: 1.2rem 1.2rem;
+    padding: 1rem;
 
     background: #fff;
 
@@ -39,13 +39,20 @@
            margin-bottom: 0.2rem;
        }
     }
-
-
+    
+    .idDelivery {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        
+        strong {
+            font-size: 0.875rem;
+        }
+    }
     .headerContainer {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: initial;
+        align-items: center;
 
         .dateTimeId {
             display: flex;
@@ -57,13 +64,6 @@
                 margin-bottom: 0.625rem;
             }
 
-            .idDelivery {
-                font-size: 0.875rem;
-                
-                strong {
-                    font-size: 0.875rem;
-                }
-            }
         }
 
         button{
@@ -129,45 +129,34 @@
         }
     }
 
-    .labelCanceled {
-        display: flex;
-        align-items: center;
-
-        margin-right: 1rem;
-
-        padding: 0.75rem 0.5rem;
-
-        height: 1rem;
-        width: fit-content;
-
-        border-radius: 2rem;
-
-        background: var(--red-100);
-
-        color: var(--red-700);
-
-        font-size: 0.75rem;
-        
-        span {
-            font-size: 0.75rem;
-            margin-left: 0.5rem;
-        }
-    }
-
     .statusContainer {
         display: flex;
         flex-direction: row;
-        white-space: nowrap;
+        align-items: initial;
+        
+        gap: 0.5rem;
 
-        p {
-            font-weight: 500;
-            font-size: 0.75rem;
+        animation: name duration timing-function delay iteration-count direction fill-mode;
+
+        .label {
+            display: flex;
+            align-items: center;
+
+            padding: 0.75rem 0.5rem;
+            
+            height: 1rem;
+            
+            border-radius: 2rem;
+            
+            font-size: 0.625rem;
+
+            span {
+                font-size: 0.625rem;
+                font-weight: 500;
+                margin-left: 0.5rem;
+            } 
         }
-
-        span {
-            font-size: 0.75rem;
-        }
-
+        
         .loading {
             animation: charge 1.25s infinite;
         }
@@ -180,97 +169,28 @@
             }
         }
 
-        .labelStatusSuccess {
-            display: flex;
-            align-items: center;
-
-            margin-right: 0.5rem;
-
-            padding: 0.75rem 0.5rem;
-
-            height: 1rem;
-
-            border-radius: 2rem;
-
+        .labelSuccess {
             background: var(--green-100);
 
             color: var(--green-700);
-
-            font-size: 0.75rem;
-
-            span {
-                margin-left: 0.5rem;
-            }
         }
 
-        .labelStatusIssue {
-            display: flex;
-            align-items: center;
-
-            margin-right: 0.5rem;
-
-            padding: 0.75rem 0.5rem;
-
-            height: 1rem;
-
-            border-radius: 2rem;
-
+        .labelIssue {
             background: var(--yellow-100);
 
             color: var(--black);
-
-            font-size: 0.75rem;
-
-            span {
-                margin-left: 0.5rem;
-            }
         }
 
-        .labelCanceled {
-            display: flex;
-            align-items: center;
-
-            margin-right: 0.5rem;
-
-            padding: 0.75rem 0.5rem;
-
-            height: 1rem;
-
-            border-radius: 2rem;
-
+        .labelDanger {
             background: var(--red-100);
 
             color: var(--red-700);
-
-            font-size: 0.75rem;
-
-            span {
-                margin-left: 0.5rem;
-            }
         }
 
         .labelTime {
-            display: flex;
-            align-items: center;
-
-            margin: 0 0.25rem;
-
-            width: auto;
-
-            padding: 0.75rem 0.5rem;
-
-            height: 1rem;
-
-            border-radius: 2rem;
-
             background: var(--gray-100);
 
-            font-size: 0.75rem;
-            color: var(--gray-700);
-            
-            span {
-                margin-left: 0.5rem;
-            }
+            color: var(--gray-600);
         }
     }
 
@@ -281,64 +201,53 @@
         }
     }
 
-    .actionButtonsContainer {
+    .btnsContainer {
         display: flex;
         align-items: flex-end;
-        flex-direction: column;
+        flex-direction: row;
 
-        .cancelBtn {
-            justify-content: flex-end;
+        gap: 0.5rem;
 
-            padding: 0.5rem;
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 3rem;
+
+            white-space: nowrap;
             
+            padding: 0.5rem;
+
+            border-radius: 10px;
+
+            gap: 0.5rem;
+        }
+        
+        .cancel { 
+            margin-left: auto;
+                           
             color: var(--red-300);
             background: none;
 
-            height: 2.5rem;
-            border-radius: 5px;
+            width: 50%;
         }
+        
+        .tryAgain {
+            width: 150%;
+            font-weight: 600;
 
-        .tryAgainBtn {
-            justify-content: flex-end;
+            color: var(--green-700);
 
-            padding: 0.5rem;
-            
-            color: var(--gray-500);
-
-            height: 2.5rem;
-            border-radius: 5px;
-
-            margin-right: 1rem;
+            background-color: var(--green-100);
         }
+        
+        .shuffle {
+            font-weight: 600;
 
-        .progressBtns {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            color: var(--orange-700);
 
-            height: 2.5rem;
-            
-            .issueBtn {
-                width: 100%;
-
-                border-radius: 5px;
-
-                color: var(--black);
-                background: none;
-
-                font-weight: 500;
-            }
-
-            .finalizeBtn {
-                margin-left: 0.2rem;
-                width: 150%;
-
-                border-radius: 5px;
-
-                font-weight: 500;
-                color: var(--green-600);
-                background: var(--green-100);
-            }
+            background-color: var(--orange-100);
         }
     }
 }
@@ -348,117 +257,76 @@
 
 @media (min-width: 1024px) {
     .deliveryCardMobileContainer {
+        display: flex;
+        flex-direction: column;
+    
+        width: 100%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .deliveryCardMobileContainer {
         display: none;
     }
 
-    .col1 {width: 8.33%;}
-    .col2 {width: 16.66%;}
-    .col3 {width: 25%;}
-    .col4 {width: 33.33%;}
-    .col5 {width: 41.66%;}
-    .col6 {width: 50%;}
-    .col7 {width: 58.33%;}
-    .col8 {width: 66.66%;}
-    .col9 {width: 75%;}
-    .col10 {width: 83.33%;}
-    .col11 {width: 91.66%;}
-    .col12 {width: 100%;}
-
     .deliveryCardDesktopContainer {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
 
         background-color: #fff;
         
         border-radius: 5px;
         
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.5rem;
+        
+        padding: 1rem;
 
         &:hover {
             box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            
-            padding: 1rem;
-
-            color: var(--gray-500);
-
-            // background-color: gray;
-
-            .headerContainer {
-                display: flex;
-                flex-direction: column;
-                min-width: 70px;
-
-                span {
-                    font-size: 0.75rem;
-                }
-
-                .idDelivery {
-                    strong {
-                        font-weight: 500;
-                    }
-                }
-
-
-                .dateTime {
-                    color: var(--gray-300);
-                }
-            }
-
-            .addressContainer {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-
-                margin-right: 0.5rem;
-                min-width: 200px;
-                p {
-                    font-weight: 500;
-                    font-size: 1rem;
-                }
-
-                span {
-                    font-size: 0.875rem;
-                }
-            }
-
-            .descriptionContainer {
-                min-width: 100px;
-
-                p {
-
-                    margin-right: 1rem;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-            }
         }
 
         .statusContainer {
             display: flex;
             flex-direction: row;
-            white-space: nowrap;
+            align-items: initial;
+            
+            gap: 0.5rem;
     
-            p {
-                font-weight: 500;
+            .label {
+                display: flex;
+                align-items: center;
+    
+                padding: 0.75rem 0.5rem;
+                
+                height: 1rem;
+                
+                border-radius: 2rem;
+                
                 font-size: 0.75rem;
+    
+                span {
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    margin-left: 0.5rem;
+                } 
             }
     
-            span {
-                font-size: 0.75rem;
+            .labelSuccess {
+                background: var(--green-100);
+    
+                color: var(--green-700);
+    
             }
-
+            
             .loading {
                 animation: charge 1.25s infinite;
             }
-
+    
+            .swinging {
+                animation: swing 0.5s infinite;
+            }
+    
             @keyframes charge {
                 from{
                     transform: rotate(0deg);
@@ -466,131 +334,153 @@
                     transform: rotate(360deg);
                 }
             }
-    
-            .labelStatusSuccess {
-                display: flex;
-                align-items: center;
-    
-                margin-right: 0.5rem;
-    
-                padding: 0.75rem 0.5rem;
-    
-                height: 1rem;
-    
-                border-radius: 2rem;
-    
-                background: var(--green-100);
-    
-                color: var(--green-700);
-    
-                font-size: 0.75rem;
-    
-                span {
-                    margin-left: 0.5rem;
+            
+            @keyframes swing {
+                from{
+                    transform: rotate(0deg);
+                }
+                50% {
+                    transform: rotate(-5deg);
+                }
+                to{
+                    transform: rotate(5deg);
                 }
             }
     
-            .labelStatusIssue {
-                display: flex;
-                align-items: center;
-    
-                margin-right: 0.5rem;
-    
-                padding: 0.75rem 0.5rem;
-    
-                height: 1rem;
-    
-                border-radius: 2rem;
-    
+            .labelIssue {
                 background: var(--yellow-100);
     
                 color: var(--black);
-    
-                font-size: 0.75rem;
-    
-                span {
-                    margin-left: 0.5rem;
-                }
             }
     
-            .labelCanceled {
-                display: flex;
-                align-items: center;
-    
-                margin-right: 0.5rem;
-    
-                padding: 0.75rem 0.5rem;
-    
-                height: 1rem;
-    
-                border-radius: 2rem;
-    
+            .labelDanger {
                 background: var(--red-100);
     
                 color: var(--red-700);
-    
-                font-size: 0.75rem;
-    
-                span {
-                    margin-left: 0.5rem;
-                }
             }
     
             .labelTime {
-                display: flex;
-                align-items: center;
-    
-                margin: 0 0.25rem;
-
-                width: auto;
-    
-                padding: 0.75rem 0.5rem;
-    
-                height: 1rem;
-    
-                border-radius: 2rem;
-    
                 background: var(--gray-100);
     
-                font-size: 0.75rem;
-                color: var(--gray-700);
-                
-                span {
-                    margin-left: 0.5rem;
-                }
+                color: var(--gray-600);
             }
         }
 
-        .actionButtonsContainer {
+        .dataContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-top: 1rem;
+
+            .dataItem {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                width: 100%;
+                min-width: 102px;
+
+                margin-left: 1rem;
+
+                gap: 0.5rem;
+
+                white-space: nowrap;
+
+                color: var(--orange-700);
+                
+                p {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    
+                    color: var(--gray-500);
+                }
+                
+                span {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 0.75rem;
+                    color: var(--gray-500);
+                }
+            }
+            
+            .id {
+                display: flex;
+                flex-direction: row;
+                
+                gap: 0.5rem;
+                
+                white-space: nowrap;
+                
+                max-width: 102px;
+                
+                color: var(--orange-700);
+                
+                p {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    
+                    font-size: 0.875rem;
+                    font-weight: 500;
+
+                    color: var(--gray-500);
+                }
+            }
+            
+            .address {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                // margin-left: 0.5rem;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .btnsContainer {
             display: flex;
             align-items: flex-end;
-            flex-direction: column;
-    
-            .cancelBtn {
-                justify-content: flex-end;
-    
-                padding: 0.5rem;
+            flex-direction: row;
+
+            gap: 1rem;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                white-space: nowrap;
                 
+                padding: 0.5rem;
+
+                border-radius: 10px;
+
+                gap: 0.5rem;
+            }
+            
+            .cancel {                
                 color: var(--red-300);
                 background: none;
-    
-                height: 2.5rem;
-                border-radius: 5px;
-
-                margin-right: 1rem;
             }
-    
-            .tryAgainBtn {
-                justify-content: flex-end;
-    
-                padding: 0.5rem;
-                
-                color: var(--gray-500);
-    
-                height: 2.5rem;
-                border-radius: 5px;
-    
-                margin-right: 1rem;
+            
+            .tryAgain {
+                font-weight: 600;
+
+                color: var(--green-700);
+
+                background-color: var(--green-100);
+            }
+            
+            .shuffle {
+                font-weight: 600;
+
+                color: var(--orange-700);
+
+                background-color: var(--orange-100);
             }
     
             .progressBtns {

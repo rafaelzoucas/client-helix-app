@@ -6,8 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 
-export default function OnHold() {
+import CancelDelivery from '../../../Modals/CancelDelivery'
+
+export default function TryAgain() {
     const [isDeliveryCardOpened, setIsDeliveryCardOpened] = useState(true)
+    const [isModalConfirmCancelOpened, setIsModalConfirmCancelOpened] = useState(false)
     const [displayDeliveryCardItems, setDisplayDeliveryCardItems] = useState('none')
 
     function showHideDeliveryCard() {
@@ -20,58 +23,66 @@ export default function OnHold() {
         }
     }
 
+    function openConfirmCancel() {
+        setIsModalConfirmCancelOpened(true)
+    }
+
     return (
         <>
             {/* ------------------MOBILE------------------- */}
             <div className={styles.deliveryCardMobileContainer}>
-                <section id="header" className={styles.headerContainer} onClick={showHideDeliveryCard}>
-                    <div className={styles.dateTimeId}>
+                <section 
+                    id="header" 
+                    className={styles.headerContainer} 
+                    onClick={showHideDeliveryCard}
+                >
+                    {/* <div className={styles.dateTimeId}>
                         <span className={styles.dateTime}>Hoje - 14:53</span>
 
-                        <span id="idDelivery" className={`${styles.titleDelivery} ${styles.idDelivery}`}>
-                            <FontAwesomeIcon icon="hashtag" />
-                            <strong>1973</strong>
-                        </span>
+                    </div> */}
 
+                    <div className={styles.statusContainer}>
+                        <div className={`${styles.label} ${styles.labelTime}`}>
+                            <FontAwesomeIcon icon="clock" />
+                            <span>{'Hoje - 14:23'}</span>
+                        </div>
+
+                        <div className={`${styles.label} ${styles.labelDanger}`}>
+                            <FontAwesomeIcon icon="times-circle" />
+                            {/* <span>{'Não há entregadores'}</span> */}
+                            <span>{'Entregador não encontrado'}</span>
+
+                        </div>
+
+                        <div className={`${styles.label} ${styles.labelTime}`}>
+                            <FontAwesomeIcon icon="hourglass-half" className={styles.swinging} />
+
+                            <span>{'00:55'}</span>
+                        </div>
                     </div>
                     
                     <FontAwesomeIcon 
                         icon="chevron-down" 
                         className={`${isDeliveryCardOpened ? (
-                            `${styles.showDeliveryCard}`
+                            `${styles.showDeliveryCard} ${styles.label}`
                         ) : (
                             `${styles.hideDeliveryCard}`
                         )}`}
                     />
                 </section>
 
-                <section id="status" className={styles.statusContainer}>
-                    {/* <div className={styles.statusBar}>
-                        <div className={styles.waitingDeliverymanStatus}>
-                            <div className={styles.waitingDeliverymanCurrentStatus}></div>
-                        </div>
-
-                        <div className={styles.deliveryInProgressStatus}>
-                            <div className={styles.deliveryInProgressCurrentStatus}></div>
-                        </div>
-                    </div>
-
-                    <p>Procurando entregador...</p>
-
-                    <span>0 minutos e 57 segundos</span> */}
-
-                    <div className={styles.labelCanceled}>
-                        <FontAwesomeIcon icon="exclamation-circle" />
-                        <span>{'Não há entregadores disponíveis'}</span>
-                    </div>
+                <section className={`${styles.titleDelivery} ${styles.idDelivery}`}>
+                    <FontAwesomeIcon icon="hashtag" />
+                    <strong>1973</strong>
                 </section>
 
                 <section id="address" className={styles.addressContainer} >
-                    <h3 className={styles.titleDelivery}>
+                    <h3 className={styles.titleDelivery} style={{display: `${displayDeliveryCardItems}`}}>
                         <FontAwesomeIcon icon="map-marker-alt" />
                         <strong>Endereço da entrega</strong>
                     </h3>
-                        <p>Rua Do Endereço Da Entrega, 345</p>
+                    
+                    <p>Rua Do Endereço Da Entrega, 345</p>
 
                     <span style={{display: `${displayDeliveryCardItems}`}}>Referência:</span>
 
@@ -95,84 +106,87 @@ export default function OnHold() {
                     <p>Cartão</p>
                 </section>
 
-                <div id="actionButtons" className={styles.actionButtonsContainer}>
-                    <div className={styles.progressBtns}>
-                        <button className={styles.tryAgainBtn}>Tentar novamente</button>
-                        <button className={styles.cancelBtn}>Cancelar</button>
-                    </div>
+                <div className={`${styles.btnsContainer} `}>
+                    <button className={styles.cancel} onClick={openConfirmCancel}>Cancelar</button>
+                    <button className={styles.tryAgain}>
+                        <FontAwesomeIcon icon="redo" />
+                        Tentar novamente
+                    </button>
+
                 </div>
             </div>
+
+            {isModalConfirmCancelOpened ? (
+                <CancelDelivery 
+                    onClose={() => setIsModalConfirmCancelOpened(false)}
+                />
+            ) : null}
 
             {/* ------------------ DESKTOP ----------------- */}
             <div className={styles.deliveryCardDesktopContainer}>
-                <div className={`${styles.container} ${styles.col8}`}>
-                <section 
-                        id="header" 
-                        className={`${styles.headerContainer} ${styles.col1}`}
-                    >
-                        <span className={styles.dateTime}>Hoje - 14:53</span>
-
-                        <span 
-                            id="idDelivery" 
-                            className={`${styles.titleDelivery} ${styles.idDelivery}`}
-                        >
-                            <FontAwesomeIcon icon="hashtag" />
-                            <strong>1973</strong>
-                        </span>
-                    </section>
-
-                    <section 
-                        id="address" 
-                        className={`${styles.addressContainer} ${styles.col4}`}
-                    >
-                        <p>Rua Do Endereço Da Entrega, 345</p>
-
-                        <span className={styles.reference}>Próximo ao Bar Do Zé, Casa amarela de portão azul.</span>
-                    </section>
-
-                    <section 
-                        id="description" 
-                        className={`${styles.descriptionContainer} ${styles.col4}`}
-                    >
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ullam quas praesentium animi placeat beatae magni dolore a maiores.</p>
-
-                    </section>
-
-                    <section 
-                        id="payment"
-                        className={styles.col2}    
-                    >
-                        <p>Cartão</p>
-                    </section>
-                </div>
-
-                <section id="status" className={styles.statusContainer}>
-                <div className={styles.labelCanceled}>
-                        <FontAwesomeIcon icon="exclamation-circle" />
-                        <span>{'Não há entregadores disponíveis'}</span>
-                    </div>
-                    <div className={styles.labelTime}>
+                <div className={styles.statusContainer}>
+                    <div className={`${styles.label} ${styles.labelTime}`}>
                         <FontAwesomeIcon icon="clock" />
+                        <span>{'Hoje - 14:23'}</span>
+                    </div>
+
+                    <div className={`${styles.label} ${styles.labelDanger}`}>
+                        <FontAwesomeIcon icon="times-circle" />
+                        <span>{'Entregador não encontrado'}</span>
+                    </div>
+
+                    <div className={`${styles.label} ${styles.labelTime}`}>
+                        <FontAwesomeIcon icon="hourglass-half" className={styles.swinging} />
+
                         <span>{'00:55'}</span>
                     </div>
-                </section>
+                </div>
 
-                <div 
-                    id="actionButtons" 
-                    className={`${styles.actionButtonsContainer}`}
-                >
-                    <div className={styles.progressBtns}>
-                        <button className={styles.tryAgainBtn}>Tentar novamente</button>
+                <div className={styles.dataContainer}>
+                    <div className={` ${styles.id}`}>
+                        <FontAwesomeIcon icon="hashtag" />
 
-                        <button 
-                            className={styles.cancelBtn} 
-                            // onClick={openConfirmCancel}
-                        >
-                            Cancelar
+                        <p>1973</p>
+                    </div>
+
+                    <div className={`${styles.dataItem} `} >      
+                        <FontAwesomeIcon icon="map-marker-alt" />
+
+                        <div className={styles.address}>
+                            <p>Rua Do Endereço Da Entrega, 345</p>
+
+                            <span>Próximo ao Bar Do Zé, Casa amarela de portão azul.</span>
+                        </div>                  
+                    </div>
+
+                    <div className={`${styles.dataItem} `}>
+                        <FontAwesomeIcon icon="align-left" />
+
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ullam quas praesentium animi placeat beatae magni dolore a maiores.</p>
+                    </div>
+
+                    <div className={`${styles.dataItem} `}>
+                        <FontAwesomeIcon icon="dollar-sign" />
+
+                        <p>Cartão</p>
+                    </div>
+                
+                    <div className={`${styles.btnsContainer} `}>
+                        <button className={styles.tryAgain}>
+                            <FontAwesomeIcon icon="redo" />
+                            Tentar novamente
                         </button>
+                        
+                        <button className={styles.cancel} onClick={openConfirmCancel}>Cancelar</button>
                     </div>
                 </div>
             </div>
+
+            {isModalConfirmCancelOpened ? (
+                <CancelDelivery 
+                    onClose={() => setIsModalConfirmCancelOpened(false)}
+                />
+            ) : null}
         </>
     )
 }

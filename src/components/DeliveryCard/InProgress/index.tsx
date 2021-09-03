@@ -1,274 +1,282 @@
 import React, { useState } from 'react'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-
-import Image from 'next/image'
-
 import styles from './styles.module.scss'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import Issue from '../../Modals/Issue'
-import DeliverymanProfile from '../../Modals/DeliverymanProfile'
-
 library.add(fas)
+
+import CancelDelivery from '../../Modals/CancelDelivery'
+import Image from 'next/image'
 
 export default function InProgress() {
     const [isDeliveryCardOpened, setIsDeliveryCardOpened] = useState(true)
+    const [isModalConfirmCancelOpened, setIsModalConfirmCancelOpened] = useState(false)
     const [displayDeliveryCardItems, setDisplayDeliveryCardItems] = useState('none')
-    const [isModalIssueVisible, setIsMotalIssueVisible] = useState(false)
-    const [isIssueRequestVisible, setIsIssueRequestVisible] = useState(false)
-    const [isModalDeliverymanProfileVisible, setIsModalDeliverymanProfileVisible] = useState(false)
 
     function showHideDeliveryCard() {
         if (isDeliveryCardOpened === true) {
             setIsDeliveryCardOpened(false)
             setDisplayDeliveryCardItems('')
-        }else{
+        } else{
             setIsDeliveryCardOpened(true)
             setDisplayDeliveryCardItems('none')
         }
     }
 
-    const openModalIssue = () => {
-        setIsMotalIssueVisible(true)
-        disableBodyScroll(document)
-    }  
-
-    const openModalDeliverymanProfile = () => {
-        setIsModalDeliverymanProfileVisible(true)
-        disableBodyScroll(document)
-    }  
-
-    const openIssueRequest = () => {
-        setIsIssueRequestVisible(true)
-    }
-
-    const onClose = () => {
-        setIsIssueRequestVisible(false)
+    function openConfirmCancel() {
+        setIsModalConfirmCancelOpened(true)
     }
 
     return (
-        <div className={styles.deliveryCardContainer}>
-            {!isIssueRequestVisible ? (
-                <>
-                    <section id="header" className={styles.headerContainer} onClick={showHideDeliveryCard}>
-                        <div className={styles.dateTimeId}>
-                            <span className={styles.dateTime}>Hoje - 14:53</span>
-        
-                            <span id="idDelivery" className={`${styles.titleDelivery} ${styles.idDelivery}`}>
-                                <FontAwesomeIcon icon="hashtag" />
-                                <strong>1973</strong>
-                            </span>
-        
-                        </div>
-        
-                        <FontAwesomeIcon 
-                            icon="chevron-down" 
-                            className={`${isDeliveryCardOpened ? (
-                                `${styles.showDeliveryCard}`
-                            ) : (
-                                `${styles.hideDeliveryCard}`
-                            )}`}
-                        />
-                    </section>
-        
-                    <section id="status" className={styles.statusContainer}>
-                        <div className={styles.statusBar} style={{display: `${displayDeliveryCardItems}`}}>
-                            <div className={styles.findingDeliverymanStatus}>
-                                <div className={styles.findingDeliverymanCurrentStatus}></div>
-                            </div>
-        
-                            <div className={styles.waitingDeliverymanStatus}>
-                                <div className={styles.waitingDeliverymanCurrentStatus}></div>
-                            </div>
+        <>
+            {/* ------------------MOBILE------------------- */}
+            <div className={styles.deliveryCardMobileContainer}>
+                <section 
+                    id="header" 
+                    className={styles.headerContainer} 
+                    onClick={showHideDeliveryCard}
+                >
+                    {/* <div className={styles.dateTimeId}>
+                        <span className={styles.dateTime}>Hoje - 14:53</span>
 
-                            <div className={styles.deliveryInProgressStatus}>
-                                <div className={styles.deliveryInProgressCurrentStatus}></div>
-                            </div>
+                    </div> */}
+
+                    <div className={styles.statusContainer}>
+                        <div className={`${styles.label} ${styles.labelTime}`}>
+                            <FontAwesomeIcon icon="clock" />
+
+                            <span>{'Hoje - 14:23'}</span>
                         </div>
-        
-                        <p>Chegada prevista às 20:15</p>
-        
-                        <span>30:00</span>
-                    </section>
-        
-                    <section id="deliveryMan" className={styles.deliverymanContainer} style={{display: `${displayDeliveryCardItems}`}}>
-                        {/* <h3 className={styles.titleDelivery}>
-                            <FontAwesomeIcon icon="motorcycle" />
-                            <strong>Informações do entregador</strong>
-                        </h3> */}
-        
-                        <div className={styles.profileLink} onClick={openModalDeliverymanProfile}>
-                            <div className={styles.info}>
-                                <Image 
-                                    width={28} 
-                                    height={28} 
-                                    src="/img/icons/profile-user.svg"
-                                    alt="Profile"
-                                />
-                                <div className={styles.deliveryman}>
-                                    <span>
-                                        Nome do Entregador
-                                    </span>
-        
-                                    <div className={styles.currentRate}>
-                                        <FontAwesomeIcon icon="star" />
-                                        <span>4.8</span>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <FontAwesomeIcon icon="angle-right" className={styles.arrow} />
+
+                        <div className={`${styles.label} ${styles.labelSuccess}`}>
+                            <FontAwesomeIcon icon="spinner" className={styles.loading} />
+
+                            <span>{'Entregador a caminho'}</span>
                         </div>
-                    </section>
-        
-                    <section id="address" className={styles.addressContainer}>
-                        <h3 className={styles.titleDelivery}>
-                            <FontAwesomeIcon icon="map-marker-alt" />
-                            <strong>Endereço da entrega</strong>
-                        </h3>
-                            <p>Rua Do Endereço Da Entrega, 345</p>
-        
-                        <span style={{display: `${displayDeliveryCardItems}`}}>Referência:</span>
-        
-                        <p style={{display: `${displayDeliveryCardItems}`}}>Próximo ao Bar Do Zé, Casa amarela de portão azul.</p>
-                    </section>
-        
-                    <section id="description" className={styles.descriptionContainer} style={{display: `${displayDeliveryCardItems}`}}>
-                        <h3 className={styles.titleDelivery}>
-                            <FontAwesomeIcon icon="align-left" />
-                            <strong>Descrição</strong>
-                        </h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ullam quas praesentium animi placeat beatae magni dolore a maiores.</p>
-        
-                    </section>
-        
-                    <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
-                        <h3 className={styles.titleDelivery}>
-                            <FontAwesomeIcon icon="exclamation-triangle" />
-                            <strong>Imprevisto</strong>
-                        </h3>
-                        <p>Faltou um item do pedido.</p>
-                    </section>
-        
-                    <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
-                        <h3 className={styles.titleDelivery}>
-                            <FontAwesomeIcon icon="coins" />
-                            <strong>Forma de recebimento</strong>
-                        </h3>
-                        <p>Cartão</p>
-                    </section>
+
+                        <div className={`${styles.label} ${styles.labelTime}`}>
+                            <FontAwesomeIcon icon="hourglass-half" className={styles.swinging} />
+
+                            <span>{'00:55'}</span>
+                        </div>
+                    </div>
                     
-                    <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
-                        <h3 className={styles.titleDelivery}>
-                            <FontAwesomeIcon icon="dollar-sign" />
-                            <strong>Valor a pagar ao entregador</strong>
-                        </h3>
-                        <p>R$ 6,75</p>
-                    </section>
-        
-                    <div id="actionButtons" className={styles.actionButtonsContainer}>        
-                        <div className={styles.progressBtns}>
-                            <button onClick={openModalIssue} className={styles.issueBtn}>
-                                Imprevisto
-                            </button>
-
-                            <button onClick={openModalIssue} className={styles.finalize}>
-                                Finalizar entrega
-                            </button>
-
-                            {/*class issueRequestBtnViewed quando for visualizada*/}
-                            {/* <button onClick={openIssueRequest} className={styles.issueRequestBtn}> 
-                                <FontAwesomeIcon icon="exclamation-circle" />
-                                <span>Houve 1 imprevisto</span>
-                            </button> */}
-                        </div>
-                    </div>
-        
-                    {isModalIssueVisible ? (
-                    <Issue 
-                        onClose={() => {
-                            setIsMotalIssueVisible(false)
-                            enableBodyScroll(document)
-                        }} 
+                    <FontAwesomeIcon 
+                        icon="chevron-down" 
+                        className={`${isDeliveryCardOpened ? (
+                            `${styles.showDeliveryCard} ${styles.label}`
+                        ) : (
+                            `${styles.hideDeliveryCard}`
+                        )}`}
                     />
-                    ) : null}
+                </section>
 
-                    {isModalDeliverymanProfileVisible ? (
-                    <DeliverymanProfile 
-                        onClose={() => {
-                            setIsModalDeliverymanProfileVisible(false)
-                            enableBodyScroll(document)
-                        }} 
-                    />
-                    ) : null}
-                </>
-            ) : (
-                <>
-                    <h3 className={styles.titleDelivery}>
-                        <FontAwesomeIcon icon="exclamation-circle" />
-                        <strong>Houve algo de errado com essa entrega</strong>
-                    </h3>
+                <section className={`${styles.titleDelivery} ${styles.idDelivery}`}>
+                    <FontAwesomeIcon icon="hashtag" />
+                    <strong>1973</strong>
+                </section>
 
-                    <section className={styles.whatsWrong}>
-                        <div className={styles.prevData}>
-                            <span>ID:</span>
-                            <p>1234</p>
-                            <span>Endereço da entrega</span>
-                            <p>Rua Do Endereço Da Entrega, 123 - Assis SP</p>
-                            <span>Referência</span>
-                            <p>Próximo ao Bar do Zé</p>
-                            <span>Forma de pagamento</span>
-                            <p>Cartão</p>
-                            <span>Descrição</span>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus in aliquam nostrum.</p>
-                        </div>
-
-                        <div className={styles.issue}>
-                            <FontAwesomeIcon icon="adjust" />
-                            <p>Pedido incompleto</p>
-                        </div>
-
-                        <div className={styles.messageDeliveryman}>
-                            <strong>Nome do entregador:</strong>
-                            <p>- Está faltando um refrigerante.</p>
-                        </div>
-                    </section>
-
-                    <section className={styles.solveAction}>
-                        <div className={styles.solveOptions}>
-                            <div className={styles.solveActionOptionOnPressed}>
-                                <FontAwesomeIcon icon="exchange-alt" />
-                                <span>Preciso que o entregador retorne</span>
-                            </div>
-
-                            <div className={styles.solveActionOption}>
-                                <FontAwesomeIcon icon="times-circle" />
-                                <span>Não preciso que o entregador retorne</span>
-                            </div>
-                        </div>
-                        <div className={styles.explanation}>
-                            <strong>Serão cobradas 2 entregas.</strong>
-
+                <div className={styles.profileLink} style={{display: `${displayDeliveryCardItems}`}}>
+                    <div className={styles.info}>
+                        <Image 
+                            width={28} 
+                            height={28} 
+                            src="/img/icons/profile-user.svg"
+                            alt="Profile"
+                        />
+                        <div className={styles.deliveryman}>
                             <span>
-                                O entregador retornará ao endereço de coleta 
-                                e depois ao endereço de entrega novamente.
+                                Nome do Entregador
                             </span>
 
-                            {/* <span>
-                                O entregador retornará apenas ao endereço de coleta 
-                                conforme seja necessário.
-                            </span> */}
+                            <div className={styles.currentRate}>
+                                <FontAwesomeIcon icon="star" />
+                                <span>4.8</span>
+                            </div>
                         </div>
-                    </section>
-
-                    <div className={styles.issueButtonsContainer}>
-                        {/* <button className={styles.disabledBtn}>Selecione uma solução para continuar</button> */}
-                        <button onClick={onClose} className={styles.requestIssueBtn}>Confirmar correção</button>
                     </div>
-                </>
-            )}
-        </div>
+
+                    <FontAwesomeIcon icon="angle-right" className={styles.arrow} />
+                </div>
+
+                <section id="address" className={styles.addressContainer} >
+                    <h3 className={styles.titleDelivery} style={{display: `${displayDeliveryCardItems}`}}>
+                        <FontAwesomeIcon icon="map-marker-alt" />
+                        <strong>Endereço da entrega</strong>
+                    </h3>
+                    
+                    <p>Rua Do Endereço Da Entrega, 345</p>
+
+                    <span style={{display: `${displayDeliveryCardItems}`}}>Referência:</span>
+
+                    <p style={{display: `${displayDeliveryCardItems}`}}>Próximo ao Bar Do Zé, Casa amarela de portão azul.</p>
+                </section>
+
+                <section id="description" className={styles.descriptionContainer} style={{display: `${displayDeliveryCardItems}`}}>
+                    <h3 className={styles.titleDelivery}>
+                        <FontAwesomeIcon icon="align-left" />
+                        <strong>Descrição</strong>
+                    </h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ullam quas praesentium animi placeat beatae magni dolore a maiores.</p>
+
+                </section>
+
+                <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
+                    <h3 className={styles.titleDelivery}>
+                        <FontAwesomeIcon icon="exclamation-triangle" />
+                        <strong>Imprevisto</strong>
+                    </h3>
+                    <p>Faltou um item do pedido.</p>
+                </section>
+
+                <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
+                    <h3 className={styles.titleDelivery}>
+                        <FontAwesomeIcon icon="coins" />
+                        <strong>Forma de pagamento</strong>
+                    </h3>
+                    <p>Cartão</p>
+                </section>
+
+                <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
+                    <h3 className={styles.titleDelivery}>
+                        <FontAwesomeIcon icon="dollar-sign" />
+                        <strong>Valor a pagar ao entregador</strong>
+                    </h3>
+                    <p>R$ 6,75</p>
+                </section>
+
+                <div className={`${styles.btnsContainer} `}>
+                    <button className={styles.issue} onClick={openConfirmCancel}>
+                        <FontAwesomeIcon icon="exclamation-triangle" />
+
+                        Imprevisto
+                    </button>
+                    {/* <button className={styles.finalizeBtn} onClick={openConfirmCancel}>
+                        <FontAwesomeIcon icon="check" />
+
+                        Finalizar
+                    </button> */}
+
+                    {/*class issueRequestBtnViewed quando for visualizada*/}
+                    <button className={styles.issueRequestBtn}> 
+                        <FontAwesomeIcon icon="exclamation-circle" />
+                        <span>Houve 1 imprevisto</span>
+                    </button>
+                </div>
+            </div>
+
+            {isModalConfirmCancelOpened ? (
+                <CancelDelivery 
+                    onClose={() => setIsModalConfirmCancelOpened(false)}
+                />
+            ) : null}
+
+            {/* ------------------ DESKTOP ----------------- */}
+            <div className={styles.deliveryCardDesktopContainer}>
+                <div className={styles.statusContainer}>
+                    <div className={`${styles.label} ${styles.labelTime}`}>
+                        <FontAwesomeIcon icon="clock" />
+                        <span>{'Hoje - 14:23'}</span>
+                    </div>
+
+                    <div className={`${styles.label} ${styles.labelSuccess}`}>
+                        <FontAwesomeIcon icon="spinner" className={styles.loading} />
+                        <span>{'Entregador a caminho'}</span>
+                    </div>
+
+                    <div className={`${styles.label} ${styles.labelTime}`}>
+                        <FontAwesomeIcon icon="hourglass-half" className={styles.swinging} />
+
+                        <span>{'00:55'}</span>
+                    </div>
+                </div>
+
+                <div className={styles.dataContainer}>
+                    <div className={` ${styles.id}`}>
+                        <FontAwesomeIcon icon="hashtag" />
+
+                        <p>1973</p>
+                    </div>
+
+                    <div className={`${styles.dataItem} ${styles.deliverymanContainer}`}>
+                        <Image 
+                            width={28} 
+                            height={28} 
+                            src="/img/icons/profile-user.svg"
+                            alt="Profile"
+                        />
+
+                        <div className={styles.deliveryman}>
+                            <p>
+                                Nome do Entregador
+                            </p>
+
+                            <div className={styles.currentRate}>
+                                <FontAwesomeIcon icon="star" />
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={`${styles.dataItem} `} >      
+                        <FontAwesomeIcon icon="map-marker-alt" />
+
+                        <div className={styles.address}>
+                            <p>Rua Do Endereço Da Entrega, 345</p>
+
+                            <span>Próximo ao Bar Do Zé, Casa amarela de portão azul.</span>
+                        </div>                  
+                    </div>
+
+                    <div className={`${styles.dataItem} `}>
+                        <FontAwesomeIcon icon="align-left" />
+
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ullam quas praesentium animi placeat beatae magni dolore a maiores.</p>
+                    </div>
+
+                    <div className={styles.dataItem}>
+                        <FontAwesomeIcon icon="exclamation-triangle" />
+                        <p>Faltou um item do pedido.</p>
+                    </div>
+
+                    <div className={`${styles.dataItem} `}>
+                        <FontAwesomeIcon icon="dollar-sign" />
+
+                        <p>Cartão</p>
+                    </div>
+
+                    <div className={`${styles.dataItem} `}>
+                        <FontAwesomeIcon icon="dollar-sign" />
+                        
+                        <p>R$ 6,75</p>
+                    </div>
+                
+                    <div className={`${styles.btnsContainer} `}>
+                        <button className={styles.issue} onClick={openConfirmCancel}>
+                            <FontAwesomeIcon icon="exclamation-triangle" />
+
+                            Imprevisto
+                        </button>
+                        <button className={styles.finalizeBtn} onClick={openConfirmCancel}>
+                            <FontAwesomeIcon icon="check" />
+
+                            Finalizar
+                        </button>
+                        {/*class issueRequestBtnViewed quando for visualizada*/}
+                        {/* <button onClick={openIssueRequest} className={styles.issueRequestBtn}> 
+                            <FontAwesomeIcon icon="exclamation-circle" />
+                            <span>Houve 1 imprevisto</span>
+                        </button> */}
+                    </div>
+                </div>
+            </div>
+
+            {isModalConfirmCancelOpened ? (
+                <CancelDelivery 
+                    onClose={() => setIsModalConfirmCancelOpened(false)}
+                />
+            ) : null}
+        </>
     )
 }

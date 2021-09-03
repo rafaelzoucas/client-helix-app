@@ -4,7 +4,7 @@
 
     width: 95vw;
 
-    padding: 1rem;
+    padding: 1.2rem 1.2rem;
 
     background: #fff;
 
@@ -17,9 +17,8 @@
 
     box-shadow: 0 3px 45px rgba(0, 0, 0, 0.05);
 
-    gap: 0.875rem;
-
     section {
+       margin-bottom: 0.875rem;
 
        .titleDelivery {
            margin-bottom: 0.2rem;
@@ -40,19 +39,13 @@
            margin-bottom: 0.2rem;
        }
     }
-    
-    .idDelivery {
-        font-size: 0.875rem;
-        
-        strong {
-            font-size: 0.875rem;
-        }
-    }
+
+
     .headerContainer {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        align-items: initial;
 
         .dateTimeId {
             display: flex;
@@ -64,6 +57,13 @@
                 margin-bottom: 0.625rem;
             }
 
+            .idDelivery {
+                font-size: 0.875rem;
+                
+                strong {
+                    font-size: 0.875rem;
+                }
+            }
         }
 
         button{
@@ -131,169 +131,333 @@
 
     .statusContainer {
         display: flex;
-        flex-direction: row;
-        align-items: initial;
+        flex-direction: column;
+
+        p {
+            font-weight: 500;
+            font-size: 0.75rem;
+        }
+
+        span {
+            font-size: 0.75rem;
+        }
+
+        .statusBar{
+            margin: 0.5rem 0;
         
-        gap: 0.5rem;
-
-        animation: name duration timing-function delay iteration-count direction fill-mode;
-
-        .label {
             display: flex;
-            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
 
-            padding: 0.75rem 0.5rem;
-            
-            height: 1rem;
-            
-            border-radius: 2rem;
-            
-            font-size: 0.625rem;
-
-            span {
-                font-size: 0.625rem;
-                font-weight: 500;
-                margin-left: 0.5rem;
-            } 
+            width: 100%;
         }
         
-        .loading {
-            animation: charge 1.25s infinite;
-        }
+        .findingDeliverymanStatus{
+            width: 50%;
+            height: 0.3rem;
 
-        .swinging {
-            animation: swing 0.5s infinite;
-        }
-
-        @keyframes charge {
-            from{
-                transform: rotate(0deg);
-            }to{
-                transform: rotate(360deg);
-            }
-        }
+            margin-right: 0.5rem;
         
-        @keyframes swing {
-            from{
-                transform: rotate(0deg);
-            }
-            50% {
-                transform: rotate(-5deg);
-            }
-            to{
-                transform: rotate(5deg);
-            }
-        }
-
-        .labelSuccess {
-            background: var(--green-100);
-
-            color: var(--green-700);
-        }
-
-        .labelIssue {
-            background: var(--yellow-100);
-
-            color: var(--black);
-        }
-
-        .labelDanger {
-            background: var(--red-100);
-
-            color: var(--red-700);
-        }
-
-        .labelTime {
             background: var(--gray-100);
+            
+            .findingDeliverymanCurrentStatus{
+                width: 100%;
+                height: 0.3rem;
+            
+                background: var(--green-500);
+            }
 
-            color: var(--gray-600);
+        }
+        
+        .waitingDeliverymanStatus{
+            width: 100%;
+            height: 0.3rem;
+        
+            background: var(--gray-100);
+            
+            .waitingDeliverymanCurrentStatus{
+                animation: progress 2s infinite;
+                height: 0.3rem;
+            
+                background: var(--green-500);
+            }
+        }
+
+        .deliveryInProgressStatus{
+            width: 100%;
+            height: 0.3rem;
+
+            margin-left: 0.5rem;
+        
+            background: var(--gray-100);
+            
+            .deliveryInProgressCurrentStatus{
+                width: 0%;
+                height: 0.3rem;
+            
+                background: var(--green-500);
+            }
+        }
+
+        @keyframes progress {
+            from{
+                width: 0;
+            }to{
+                width: 100%;
+            }
         }
     }
 
     .addressContainer {
-
+        
         span {
             font-size: 0.75rem;
         }
     }
 
-    .btnsContainer {
+    .actionButtonsContainer {
         display: flex;
-        align-items: flex-end;
-        flex-direction: row;
+        flex-direction: column;
 
-        gap: 0.5rem;
-
-        button {
+        .progressBtns {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: row;
+            justify-content: space-between;
 
-            white-space: nowrap;
+            // height: 2.5rem;
             
-            padding: 0.5rem;
+            .issueBtn {
+                padding: 1rem ;
 
-            border-radius: 10px;
+                border-radius: 5px;
 
-            gap: 0.5rem;
+                color: var(--gray-600);
+                background: var(--yellow-100);
+
+                font-weight: 500;
+
+                width: 50%;
+            }
+
+            .finalize {
+                padding: 1rem ;
+
+                border-radius: 5px;
+
+                color: var(--green-700);
+                background: var(--green-100);
+
+                font-weight: 500;
+
+                width: 100%;
+
+                margin-left: 0.5rem;
+            }
+
+            .issueRequestBtn {
+                border-radius: 10rem;
+
+                background: var(--red-300);
+
+                color: #fff;
+
+                padding: 1rem;
+
+                width: 200%;
+
+                margin-left: 0.5rem;
+
+                span {
+                    margin-left: 0.5rem;
+                    font-size: 0.75rem;
+                }
+            }
+
+            .issueRequestBtnViewed {
+                border-radius: 10rem;
+
+                background: var(--gray-200);
+
+                color: var(--gray-600);
+
+                padding: 1rem;
+
+                span {
+                    margin-left: 0.5rem;
+                    font-size: 0.75rem;
+                }
+            }
         }
-        
-        .cancel {                
-            color: var(--red-300);
-            background: none;
+    }
+
+    // ISSUE REQUEST
+    
+    h3 {
+        font-size: 0.75rem;
+
+        strong {
+            margin-left: 0.5rem;
+            font-size: 0.75rem;
         }
+
+        color: var(--orange-700);
+
+        margin-bottom: 0.5rem;
+    }
+    
+    .whatsWrong {
         
-        .tryAgain {
-            font-weight: 600;
-
-            color: var(--green-700);
-
-            background-color: var(--green-100);
+        .prevData {
+            span {
+                color: var(--gray-300);
+                font-size: 0.75rem;
+            }
+            p {
+                font-size: 0.875rem;
+            }
         }
 
         .issue {
-            padding: 0 1rem;
-            font-weight: 600;
-            height: 3rem;
+            display: flex;
+            align-items: center;
+            
+            padding-left: 1rem;
+            width: 100%;
+            padding: 1rem;
+            
+            border: 1px solid var(--gray-200);
+            border-radius: 5px;
+            
+            margin: 0.5rem 0 0.3rem 0;
+            
+            background: var(--gray-200);
+            
+            color: var(--gray-600);
 
-            color: var(--yellow-900);
+            p {
+                margin-left: 0.5rem;
+                font-size: 0.875rem;
+            }
+        }
 
-            background-color: var(--yellow-100);
+        .messageDeliveryman {
+            margin-top: 1rem;
+
+            color: var(--gray-600);
+
+            strong {
+                font-weight: 500;
+            }
+        }
+    
+    }
+    
+    .solveAction {
+        display: flex;
+        flex-direction: column;
+
+        .solveOptions{
+            display: flex;
+            flex-direction: row;
+
+            .solveActionOption {
+                border: 1px solid var(--gray-200);
+                border-radius: 5px;
+        
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+        
+                font-size: 2rem;
+        
+                padding: 1rem;
+        
+                span {
+                    margin-left: 0.5rem;
+                    font-size: 0.75rem;
+                }
+        
+                &:first-child {
+                    margin-right: 0.15rem;
+                }
+                &:last-child {
+                    margin-left: 0.15rem;
+                }
+            }
+
         }
         
-        .shuffle {
-            font-weight: 600;
-
+        .solveActionOptionOnPressed {
+            border: 1px solid var(--orange-700);
+            border-radius: 5px;
+            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+            font-size: 2rem;
+            
+            padding: 1rem;
+            
             color: var(--orange-700);
-
-            background-color: var(--orange-100);
+            
+            span {
+                margin-left: 0.5rem;
+                font-size: 0.75rem;
+            }
+            
+            &:first-child {
+                margin-right: 0.15rem;
+            }
+            &:last-child {
+                margin-left: 0.15rem;
+            }
         }
         
-        .finalizeBtn {
-            margin-left: 0.2rem;
-            width: 150%;
-            height: 3rem;
+        .explanation {
+            display: flex;
+            flex-direction: column;
 
-            border-radius: 10px;
+            margin-top: 0.5rem;
 
-            font-weight: 500;
-            color: var(--green-600);
-            background: var(--green-100);
+            strong {
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: var(--black);
+            }
+    
+            span {
+                font-size: 0.75rem;
+                
+            }
         }
-
-        .issueRequestBtn {
-            margin-left: 0.2rem;
-            width: 150%;
+    }
+    
+    .issueButtonsContainer {
+        display: flex;
+        flex-direction: column;
+    
+        button {
             height: 3rem;
-
-            border-radius: 10rem;
-
+    
+            margin-top: 0.5rem;
+    
+            border-radius: 5px;
+    
             font-weight: 500;
-            color: var(--red-700);
-            background: var(--red-100);
+        }
+    
+        .requestIssueBtn {
+            background: var(--yellow-100);
+            color: var(--gray-600);
+        }
+    
+        .disabledBtn {
+            color: var(--gray-300);
         }
     }
 }
+
 .deliveryCardDesktopContainer {
     display: none;
 }
@@ -360,33 +524,16 @@
     
                 color: var(--green-700);
     
-            }
-            
-            .loading {
-                animation: charge 1.25s infinite;
-            }
+                .loading {
+                    animation: charge 1.25s infinite;
+                }
     
-            .swinging {
-                animation: swing 0.5s infinite;
-            }
-    
-            @keyframes charge {
-                from{
-                    transform: rotate(0deg);
-                }to{
-                    transform: rotate(360deg);
-                }
-            }
-            
-            @keyframes swing {
-                from{
-                    transform: rotate(0deg);
-                }
-                50% {
-                    transform: rotate(-5deg);
-                }
-                to{
-                    transform: rotate(5deg);
+                @keyframes charge {
+                    from{
+                        transform: rotate(0deg);
+                    }to{
+                        transform: rotate(360deg);
+                    }
                 }
             }
     
@@ -450,13 +597,6 @@
                     font-size: 0.75rem;
                     color: var(--gray-500);
                 }
-            }
-
-            .deliverymanContainer {
-                display: flex;
-                flex-direction: row;
-
-                
             }
             
             .id {
@@ -524,17 +664,6 @@
 
                 background-color: var(--green-100);
             }
-
-            .issue {
-                height: 2.1rem;
-                font-weight: 600;
-
-                padding: 0 1rem;
-
-                color: var(--yellow-900);
-
-                background-color: var(--yellow-100);
-            }
             
             .shuffle {
                 font-weight: 600;
@@ -543,19 +672,35 @@
 
                 background-color: var(--orange-100);
             }
-
-            .finalizeBtn {
-                margin-left: 0.2rem;
-                width: 150%;
-                height: 2.1rem;
-
-                padding: 0 1rem;
-
-                border-radius: 10px;
-
-                font-weight: 500;
-                color: var(--green-600);
-                background: var(--green-100);
+    
+            .progressBtns {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+    
+                height: 2.5rem;
+                
+                .issueBtn {
+                    width: 100%;
+    
+                    border-radius: 5px;
+    
+                    color: var(--black);
+                    background: none;
+    
+                    font-weight: 500;
+                }
+    
+                .finalizeBtn {
+                    margin-left: 0.2rem;
+                    width: 150%;
+    
+                    border-radius: 5px;
+    
+                    font-weight: 500;
+                    color: var(--green-600);
+                    background: var(--green-100);
+                }
             }
         }
     }
