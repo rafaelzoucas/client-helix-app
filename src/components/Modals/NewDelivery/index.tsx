@@ -33,6 +33,7 @@ export default function NewDelivery({onClose = () => {}}) {
                     <form action="">
                         <span>Rua</span>
                         <input type="text" placeholder="Rua do Endereço Do Cliente" />
+                        <span className={styles.addressNotFound}>Endereço não encontrado.</span>
 
                         <div>
                             <div>
