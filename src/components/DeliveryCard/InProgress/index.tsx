@@ -56,7 +56,7 @@ export default function InProgress() {
                         </div>
 
                         <div className={`${styles.label} ${styles.labelTime}`}>
-                            <FontAwesomeIcon icon="hourglass-half" className={styles.swinging} />
+                            <FontAwesomeIcon icon="hourglass-half" />
 
                             <span>{'00:55'}</span>
                         </div>
@@ -186,7 +186,7 @@ export default function InProgress() {
                     </div>
 
                     <div className={`${styles.label} ${styles.labelTime}`}>
-                        <FontAwesomeIcon icon="hourglass-half" className={styles.swinging} />
+                        <FontAwesomeIcon icon="hourglass-half" />
 
                         <span>{'00:55'}</span>
                     </div>
