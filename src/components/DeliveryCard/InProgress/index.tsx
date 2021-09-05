@@ -152,17 +152,17 @@ export default function InProgress() {
 
                         Imprevisto
                     </button>
-                    {/* <button className={styles.finalizeBtn} onClick={openConfirmCancel}>
+                    <button className={styles.finalizeBtn} onClick={openConfirmCancel}>
                         <FontAwesomeIcon icon="check" />
 
                         Finalizar
-                    </button> */}
+                    </button>
 
                     {/*class issueRequestBtnViewed quando for visualizada*/}
-                    <button className={styles.issueRequestBtn}> 
+                    {/* <button className={styles.issueRequestBtn}> 
                         <FontAwesomeIcon icon="exclamation-circle" />
                         <span>Houve 1 imprevisto</span>
-                    </button>
+                    </button> */}
                 </div>
             </div>
 
@@ -175,30 +175,6 @@ export default function InProgress() {
             {/* ------------------ DESKTOP ----------------- */}
             <div className={styles.deliveryCardDesktopContainer}>
                 <div className={styles.statusContainer}>
-                    <div className={`${styles.label} ${styles.labelTime}`}>
-                        <FontAwesomeIcon icon="clock" />
-                        <span>{'Hoje - 14:23'}</span>
-                    </div>
-
-                    <div className={`${styles.label} ${styles.labelSuccess}`}>
-                        <FontAwesomeIcon icon="spinner" className={styles.loading} />
-                        <span>{'Entregador a caminho'}</span>
-                    </div>
-
-                    <div className={`${styles.label} ${styles.labelTime}`}>
-                        <FontAwesomeIcon icon="hourglass-half" />
-
-                        <span>{'00:55'}</span>
-                    </div>
-                </div>
-
-                <div className={styles.dataContainer}>
-                    <div className={` ${styles.id}`}>
-                        <FontAwesomeIcon icon="hashtag" />
-
-                        <p>1973</p>
-                    </div>
-
                     <div className={`${styles.dataItem} ${styles.deliverymanContainer}`}>
                         <Image 
                             width={28} 
@@ -218,6 +194,51 @@ export default function InProgress() {
                             </div>
                         </div>
                     </div>
+                    
+                    <div className={`${styles.label} ${styles.labelTime}`}>
+                        <FontAwesomeIcon icon="clock" />
+                        <span>{'Hoje - 14:23'}</span>
+                    </div>
+
+                    <div className={`${styles.label} ${styles.labelSuccess}`}>
+                        <FontAwesomeIcon icon="spinner" className={styles.loading} />
+                        <span>{'Entregador a caminho'}</span>
+                    </div>
+
+                    <div className={`${styles.label} ${styles.labelTime}`}>
+                        <FontAwesomeIcon icon="hourglass-half" />
+
+                        <span>{'00:55'}</span>
+                    </div>
+
+                </div>
+
+                <div className={styles.dataContainer}>
+                    <div className={` ${styles.id}`}>
+                        <FontAwesomeIcon icon="hashtag" />
+
+                        <p>1973</p>
+                    </div>
+
+                    {/* <div className={`${styles.dataItem} ${styles.deliverymanContainer}`}>
+                        <Image 
+                            width={28} 
+                            height={28} 
+                            src="/img/icons/profile-user.svg"
+                            alt="Profile"
+                        />
+
+                        <div className={styles.deliveryman}>
+                            <p>
+                                Nome do Entregador
+                            </p>
+
+                            <div className={styles.currentRate}>
+                                <FontAwesomeIcon icon="star" />
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div> */}
 
                     <div className={`${styles.dataItem} `} >      
                         <FontAwesomeIcon icon="map-marker-alt" />

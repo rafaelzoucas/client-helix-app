@@ -55,7 +55,7 @@ export default function TryAgain() {
                         </div>
 
                         <div className={`${styles.label} ${styles.labelTime}`}>
-                            <FontAwesomeIcon icon="hourglass-half" className={styles.swinging} />
+                            <FontAwesomeIcon icon="hourglass-half" />
 
                             <span>{'00:55'}</span>
                         </div>
@@ -71,7 +71,7 @@ export default function TryAgain() {
                     />
                 </section>
 
-                <section className={`${styles.titleDelivery} ${styles.idDelivery}`}>
+                <section className={`${styles.titleDelivery} ${styles.idDelivery}`} >
                     <FontAwesomeIcon icon="hashtag" />
                     <strong>1973</strong>
                 </section>
@@ -136,7 +136,7 @@ export default function TryAgain() {
                     </div>
 
                     <div className={`${styles.label} ${styles.labelTime}`}>
-                        <FontAwesomeIcon icon="hourglass-half" className={styles.swinging} />
+                        <FontAwesomeIcon icon="hourglass-half" />
 
                         <span>{'00:55'}</span>
                     </div>

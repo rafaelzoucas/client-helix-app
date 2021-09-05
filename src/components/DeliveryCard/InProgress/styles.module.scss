@@ -361,7 +361,7 @@
                 color: var(--green-700);
     
             }
-            
+
             .loading {
                 animation: charge 1.25s infinite;
             }
@@ -395,17 +395,45 @@
     
                 color: var(--black);
             }
-    
+            
             .labelDanger {
                 background: var(--red-100);
-    
+                
                 color: var(--red-700);
             }
     
             .labelTime {
                 background: var(--gray-100);
-    
+                
                 color: var(--gray-600);
+            }
+
+            .deliverymanContainer {
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+                margin-right: 0.5rem;
+                
+                .deliveryman {
+                    p {
+                        font-size: 0.875rem;
+                        font-weight: 500;
+                        
+                        color: var(--gray-500);
+                    }
+                    
+                    .currentRate {
+                        font-size: 0.75rem;
+                        color: var(--orange-700);
+                        
+                        span {
+                            font-weight: 500;
+                            margin-left: 0.25rem;
+                            font-size: 0.75rem;
+                        }
+                    }
+                }
+                
             }
         }
 
@@ -452,12 +480,6 @@
                 }
             }
 
-            .deliverymanContainer {
-                display: flex;
-                flex-direction: row;
-
-                
-            }
             
             .id {
                 display: flex;
