@@ -147,12 +147,12 @@ export default function InProgress() {
                 </section>
 
                 <div className={`${styles.btnsContainer} `}>
-                    <button className={styles.issue} onClick={openConfirmCancel}>
+                    <button className={styles.issue}>
                         <FontAwesomeIcon icon="exclamation-triangle" />
 
                         Imprevisto
                     </button>
-                    <button className={styles.finalizeBtn} onClick={openConfirmCancel}>
+                    <button className={styles.finalizeBtn}>
                         <FontAwesomeIcon icon="check" />
 
                         Finalizar
@@ -250,7 +250,7 @@ export default function InProgress() {
                         </div>                  
                     </div>
 
-                    <div className={`${styles.dataItem} `}>
+                    <div className={`${styles.dataItem} ${styles.description}`}>
                         <FontAwesomeIcon icon="align-left" />
 
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ullam quas praesentium animi placeat beatae magni dolore a maiores.</p>
@@ -262,7 +262,7 @@ export default function InProgress() {
                     </div>
 
                     <div className={`${styles.dataItem} `}>
-                        <FontAwesomeIcon icon="dollar-sign" />
+                        <FontAwesomeIcon icon="hand-holding-usd" />
 
                         <p>Cartão</p>
                     </div>
