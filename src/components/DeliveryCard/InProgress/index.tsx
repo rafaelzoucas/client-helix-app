@@ -8,6 +8,7 @@ library.add(fas)
 
 import CancelDelivery from '../../Modals/CancelDelivery'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function InProgress() {
     const [isDeliveryCardOpened, setIsDeliveryCardOpened] = useState(true)
@@ -147,11 +148,13 @@ export default function InProgress() {
                 </section>
 
                 <div className={`${styles.btnsContainer} `}>
-                    <button className={styles.issue}>
-                        <FontAwesomeIcon icon="exclamation-triangle" />
+                    <Link href="https://api.whatsapp.com/send?phone=5518996465807&fbclid=IwAR1aNtRPkUTX9Xl89Wv8dmkpSdqWpkiG7FgJeXu02rnCOWlW6wCVXWbteUo">
+                        <button className={styles.issue}>
+                            <FontAwesomeIcon icon="comment" />
 
-                        Imprevisto
-                    </button>
+                            WhatsApp
+                        </button>
+                    </Link>
                     <button className={styles.finalizeBtn}>
                         <FontAwesomeIcon icon="check" />
 
@@ -274,11 +277,14 @@ export default function InProgress() {
                     </div>
                 
                     <div className={`${styles.btnsContainer} `}>
-                        <button className={styles.issue} onClick={openConfirmCancel}>
-                            <FontAwesomeIcon icon="exclamation-triangle" />
-
-                            Imprevisto
-                        </button>
+                        <Link href="https://api.whatsapp.com/send?phone=5518996465807&fbclid=IwAR1aNtRPkUTX9Xl89Wv8dmkpSdqWpkiG7FgJeXu02rnCOWlW6wCVXWbteUo">
+                            <button className={styles.issue}>
+                                <FontAwesomeIcon icon="comment" />
+                                
+                                
+                                WhatsApp
+                            </button>
+                        </Link>
                         <button className={styles.finalizeBtn} onClick={openConfirmCancel}>
                             <FontAwesomeIcon icon="check" />
 
