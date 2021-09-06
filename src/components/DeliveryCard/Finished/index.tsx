@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 
-import CancelDelivery from '../../Modals/CancelDelivery'
 import Image from 'next/image'
 import Link from 'next/link'
+import RateDeliveryman from '../../Modals/RateDeliveryman'
 
 export default function Finished() {
     const [isDeliveryCardOpened, setIsDeliveryCardOpened] = useState(true)
@@ -171,12 +171,6 @@ export default function Finished() {
                 </section>
             </div>
 
-            {isModalConfirmCancelOpened ? (
-                <CancelDelivery 
-                    onClose={() => setIsModalConfirmCancelOpened(false)}
-                />
-            ) : null}
-
             {/* ------------------ DESKTOP ----------------- */}
             <div className={styles.deliveryCardDesktopContainer}>
                 <div className={styles.statusContainer}>
@@ -302,7 +296,7 @@ export default function Finished() {
             </div>
 
             {isModalConfirmCancelOpened ? (
-                <CancelDelivery 
+                <RateDeliveryman 
                     onClose={() => setIsModalConfirmCancelOpened(false)}
                 />
             ) : null}

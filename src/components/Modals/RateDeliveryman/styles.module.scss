@@ -1,0 +1,98 @@
+.modalContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+
+    background-color: rgba($color: #000000, $alpha: 0.40);
+
+    z-index: 1000;
+
+    .cancelContainer {
+        width: 80vw;
+        max-width: 300px;
+
+        background-color: #fff;
+
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            padding: 1.5rem;
+        }
+
+        .rateDeliveryman {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+
+            background-color: var(--background);
+
+            border-radius: 0 0 10px 10px;
+
+    
+            span {
+                font-size: 0.75rem;
+            }
+            
+            ul{
+                margin: 1rem 0 1rem 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+
+                gap: 1rem;
+    
+                li {
+                    margin-top: 0.5rem;
+                    font-size: 1.5rem;
+                    color: var(--orange-700);
+
+                    cursor: pointer;
+                }
+            }
+
+            div {
+                display: flex;
+                flex-direction: row;
+
+                width: 100%;
+
+                gap: 0.5rem;
+
+                button {
+                    width: 100%;
+    
+                    margin-top: 1rem;
+        
+                    height: 3rem;
+        
+                    border-radius: 5px;
+        
+                    background: var(--orange-100);
+        
+                    color: var(--orange-700);
+                    font-weight: 500;
+                }
+    
+                .cancel {
+                    width: 50%;
+
+                    background-color: transparent;
+                    color: red;
+                }
+            }
+    
+        }
+    }
+}

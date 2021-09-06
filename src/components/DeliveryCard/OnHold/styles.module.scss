@@ -134,9 +134,7 @@
         flex-direction: row;
         align-items: initial;
         
-        gap: 0.5rem;
-
-        animation: name duration timing-function delay iteration-count direction fill-mode;
+        gap: 0.25rem;
 
         .label {
             display: flex;
@@ -150,10 +148,11 @@
             
             font-size: 0.625rem;
 
+            gap: 0.3rem;
+
             span {
                 font-size: 0.625rem;
                 font-weight: 500;
-                margin-left: 0.5rem;
             } 
         }
         
