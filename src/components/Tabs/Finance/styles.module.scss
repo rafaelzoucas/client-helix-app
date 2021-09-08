@@ -3,10 +3,15 @@
     flex-direction: column;
     align-items: center;
 
+    max-width: 1024px;
+    
+    // background-color: gray;
+    
     .currentInvoice {
         display: flex;
         flex-direction: column;
         width: 95vw;
+        max-width: 1024px;
         align-items: flex-start;
 
         span {
@@ -25,6 +30,8 @@
 
         button {
             width: 100%;
+            max-width: 425px;
+
             height: 3rem;
             
             margin-top: 1rem;
@@ -38,121 +45,140 @@
         }
     }
 
-    .timeline {
+    .bgTimeline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         background: var(--gray-100);
-
+        
+        margin-top: 1rem;
+        
         width: 100vw;
 
-        margin-top: 1rem;
+        .timeline {
+            max-width: 1024px;
 
-        padding: 1rem 0.875rem;
-
-        .timelineItem {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-            margin: 2rem 0;
-
+            width: 100%;            
             
-            .titleDescription {
-                margin-left: 1rem;
-                
-                strong {
-                    font-size: 0.875rem;
-                    font-weight: 700;
-                }
-                
-                p {
-                    margin-top: 0.2rem;
-                    width: 100%;
-                    font-size: 0.875rem;
-                }
-            }
-            
-            span {
+            padding: 1rem 0.875rem;
+
+            .timelineItem {
                 display: flex;
-                justify-content: flex-end;
-
-                width: 35%;
+                flex-direction: row;
+                align-items: center;
+    
+                margin: 2rem 0;
+    
                 
-                margin-left: auto;
-
-                font-size: 0.75rem;
-
-                color: var(--gray-300);
-            }
-
-            .dateAndButton {
-                width: 35%;
-
-                margin-left: auto;
-
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
+                .titleDescription {
+                    margin-left: 1rem;
+                    
+                    strong {
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                    }
+                    
+                    p {
+                        margin-top: 0.2rem;
+                        width: 100%;
+                        font-size: 0.875rem;
+                    }
+                }
                 
                 span {
-                    align-items: flex-end;
-
-                    margin-bottom: 1rem;
-
-                    width: 100%;
-
                     display: flex;
-                    flex-direction: column;
+                    justify-content: flex-end;
+    
+                    width: 35%;
+                    
+                    margin-left: auto;
     
                     font-size: 0.75rem;
     
                     color: var(--gray-300);
                 }
-
-                :last-child {
-                    color: var(--gray-500);
+    
+                .dateAndButton {
+                    width: 35%;
+    
+                    margin-left: auto;
+    
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    
+                    span {
+                        align-items: flex-end;
+    
+                        margin-bottom: 1rem;
+    
+                        width: 100%;
+    
+                        display: flex;
+                        flex-direction: column;
+        
+                        font-size: 0.75rem;
+        
+                        color: var(--gray-300);
+                    }
+    
+                    :last-child {
+                        color: var(--gray-500);
+                    }
+                }
+    
+                .overdueInvoice {
+                    min-width: 1rem;
+                    min-height: 1rem;
+    
+                    border-radius: 5px;
+    
+                    background: var(--red-300);
+                }
+    
+                .closeInvoice {
+                    min-width: 1rem;
+                    min-height: 1rem;
+    
+                    border-radius: 5px;
+    
+                    background: var(--orange-700);
+                }
+    
+                .paymentReceived {
+                    min-width: 1rem;
+                    min-height: 1rem;
+    
+                    border-radius: 5px;
+    
+                    background: var(--green-600);
+                }
+    
+                .pendingPayment {
+                    min-width: 1rem;
+                    min-height: 1rem;
+    
+                    border-radius: 5px;
+    
+                    background: var(--yellow-700);
                 }
             }
-
-            .overdueInvoice {
-                min-width: 1rem;
-                min-height: 1rem;
-
-                border-radius: 5px;
-
-                background: var(--red-300);
+            :first-child {
+                margin-top: 0;
             }
-
-            .closeInvoice {
-                min-width: 1rem;
-                min-height: 1rem;
-
-                border-radius: 5px;
-
-                background: var(--orange-700);
-            }
-
-            .paymentReceived {
-                min-width: 1rem;
-                min-height: 1rem;
-
-                border-radius: 5px;
-
-                background: var(--green-600);
-            }
-
-            .pendingPayment {
-                min-width: 1rem;
-                min-height: 1rem;
-
-                border-radius: 5px;
-
-                background: var(--yellow-700);
+            :last-child {
+                margin-bottom: 0;
             }
         }
-        :first-child {
-            margin-top: 0;
-        }
-        :last-child {
-            margin-bottom: 0;
+        
+    }
+}
+
+@media (min-width: 1024px) {
+    .financePage {
+
+        .currentInvoice {
+            // max-width: ;
         }
     }
 }

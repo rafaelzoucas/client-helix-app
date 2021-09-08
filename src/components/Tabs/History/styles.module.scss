@@ -3,7 +3,8 @@
     
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    max-width: 1024px;
     
     .groupBtn{
         display: flex;
@@ -11,6 +12,7 @@
         justify-content: space-between;
         
         width: 95vw;
+        max-width: 425px;
         
         margin: 0.6rem 0 0.6rem 0;
         
@@ -47,6 +49,7 @@
     .resumeCards {
         display: flex;
         width: 95vw;
+        max-width: 1024px;
         justify-content: space-between;
         margin-bottom: 1rem;
 
@@ -87,6 +90,7 @@
         justify-content: flex-start;
 
         width: 95vw;
+        max-width: 1024px;
 
         margin-bottom: 1rem;
 
