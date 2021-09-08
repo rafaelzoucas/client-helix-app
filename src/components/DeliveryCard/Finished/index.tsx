@@ -57,7 +57,7 @@ export default function Finished() {
                         </div>
 
                         <div className={`${styles.label} ${styles.labelTime}`}>
-                            <FontAwesomeIcon icon="hourglass-half" />
+                            <FontAwesomeIcon icon="hourglass-end" />
 
                             <span>{'00:55'}</span>
                         </div>
@@ -201,7 +201,7 @@ export default function Finished() {
                     </div>
 
                     <div className={`${styles.label} ${styles.labelTime}`}>
-                        <FontAwesomeIcon icon="hourglass-half" />
+                        <FontAwesomeIcon icon="hourglass-end" />
 
                         <span>{'00:55'}</span>
                     </div>
