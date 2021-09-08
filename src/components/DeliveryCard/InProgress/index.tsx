@@ -259,11 +259,6 @@ export default function InProgress() {
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ullam quas praesentium animi placeat beatae magni dolore a maiores.</p>
                     </div>
 
-                    <div className={styles.dataItem}>
-                        <FontAwesomeIcon icon="exclamation-triangle" />
-                        <p>Faltou um item do pedido.</p>
-                    </div>
-
                     <div className={`${styles.dataItem} `}>
                         <FontAwesomeIcon icon="hand-holding-usd" />
 
@@ -273,7 +268,7 @@ export default function InProgress() {
                     <div className={`${styles.dataItem} `}>
                         <FontAwesomeIcon icon="dollar-sign" />
                         
-                        <p>R$ 6,75</p>
+                        <p>R$ 5,00</p>
                     </div>
                 
                     <div className={`${styles.btnsContainer} `}>

@@ -50,16 +50,10 @@ export default function Finished() {
                             <span>{'Hoje - 14:23'}</span>
                         </div>
 
-                        {/* <div className={`${styles.label} ${styles.labelSuccess}`}>
+                        <div className={`${styles.label} ${styles.labelSuccess}`}>
                             <FontAwesomeIcon icon="check" />
 
                             <span>{'Finalizada com sucesso'}</span>
-                        </div> */}
-                        
-                        <div className={`${styles.label} ${styles.labelIssue}`}>
-                            <FontAwesomeIcon icon="check" />
-
-                            <span>{'Finalizada com imprevisto'}</span>
                         </div>
 
                         <div className={`${styles.label} ${styles.labelTime}`}>
@@ -200,16 +194,10 @@ export default function Finished() {
                         <span>{'Hoje - 14:23'}</span>
                     </div>
 
-                    {/* <div className={`${styles.label} ${styles.labelSuccess}`}>
+                    <div className={`${styles.label} ${styles.labelSuccess}`}>
                         <FontAwesomeIcon icon="check" />
 
                         <span>{'Finalizada com sucesso'}</span>
-                    </div> */}
-                    
-                    <div className={`${styles.label} ${styles.labelIssue}`}>
-                        <FontAwesomeIcon icon="check" />
-
-                        <span>{'Finalizada com imprevisto'}</span>
                     </div>
 
                     <div className={`${styles.label} ${styles.labelTime}`}>
@@ -261,11 +249,6 @@ export default function Finished() {
                         <FontAwesomeIcon icon="align-left" />
 
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ullam quas praesentium animi placeat beatae magni dolore a maiores.</p>
-                    </div>
-
-                    <div className={styles.dataItem}>
-                        <FontAwesomeIcon icon="exclamation-triangle" />
-                        <p>Faltou um item do pedido.</p>
                     </div>
 
                     <div className={`${styles.dataItem} `}>

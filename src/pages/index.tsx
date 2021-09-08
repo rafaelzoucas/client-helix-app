@@ -123,11 +123,11 @@ export default function Home() {
 
             <button 
               onClick={openModalNewDelivery} 
-              className={styles.newDeliveryBlocked}
+              className={styles.newDelivery}
             >
                 <span>
-                  {/* + */}
-                  <FontAwesomeIcon icon="lock" className={styles.locked} />
+                  +
+                  {/* <FontAwesomeIcon icon="lock" className={styles.locked} /> */}
                 </span>
             </button>
 
