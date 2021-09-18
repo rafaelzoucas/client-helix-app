@@ -179,11 +179,22 @@ export default function Finished() {
                         <div className={styles.deliveryman}>
                             <p>
                                 Nome do Entregador
+                                <div className={styles.currentRate}>
+                                    <FontAwesomeIcon icon="star" />
+                                    <span>4.8</span>
+                                </div>
                             </p>
 
-                            <div className={styles.currentRate}>
-                                <FontAwesomeIcon icon="star" />
-                                <span>4.8</span>
+                            {/* <span>Avaliação pendente</span> */}
+                            
+                            <div className={styles.clientRate}>
+                                <ul>
+                                    <li><FontAwesomeIcon icon="star" /></li>
+                                    <li><FontAwesomeIcon icon="star" /></li>
+                                    <li><FontAwesomeIcon icon="star" /></li>
+                                    <li><FontAwesomeIcon icon="star" /></li>
+                                    <li><FontAwesomeIcon icon="star" /></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -235,7 +246,7 @@ export default function Finished() {
                         </div>
                     </div> */}
 
-                    <div className={`${styles.dataItem} `} >      
+                    <div className={`${styles.dataItem} `} >
                         <FontAwesomeIcon icon="map-marker-alt" />
 
                         <div className={styles.address}>

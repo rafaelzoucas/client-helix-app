@@ -465,6 +465,12 @@
                 
                 .deliveryman {
                     p {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        gap: 0.5rem;
+
                         font-size: 0.875rem;
                         font-weight: 500;
                         
@@ -474,11 +480,33 @@
                     .currentRate {
                         font-size: 0.75rem;
                         color: var(--gray-300);
+                        display: flex;
+                        align-items: baseline;
                         
                         span {
                             font-weight: 500;
                             margin-left: 0.25rem;
                             font-size: 0.75rem;
+                        }
+                    }
+
+                    span {
+                        font-size: 0.75rem;
+                        font-weight: 400;
+                        color: var(--gray-300);
+                    }
+
+                    .clientRate {
+                        ul {
+            
+                            display: flex;
+                            flex-direction: row;
+                            
+                            li {
+                                color: var(--orange-700);
+                                margin-right: 0.2rem;
+                                font-size: 0.625rem;
+                            }
                         }
                     }
                 }
