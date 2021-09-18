@@ -267,8 +267,8 @@ export default function Home() {
         
         <div className={styles.deliveriesContainer}>
           <section style={{display: `${displayOnHoldDeliveries}`}}>
-            {/* <OnHold />
-            <TryAgain /> */}
+            <OnHold />
+            <TryAgain />
 
             {/* ------- ativar quando estiver com cadastro em análise -------- */}
             {/* <div className={styles.theresNoDelivery}>
@@ -287,13 +287,13 @@ export default function Home() {
             </div> */}
 
             {/* -------- ativar quando saldo estiver insuficiente ---------- */}
-            <div className={styles.theresNoDelivery}>
+            {/* <div className={styles.theresNoDelivery}>
               <FontAwesomeIcon icon="ban" />
               <p>
                 O seu saldo é insuficiente para solicitar novas entregas. 
                 <button>Adicionar crédito</button>
               </p> 
-            </div>
+            </div> */}
           </section>
           <section style={{display: `${displayInProgressDeliveries}`}}>
             <InProgress />
