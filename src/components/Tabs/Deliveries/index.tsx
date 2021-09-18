@@ -10,6 +10,7 @@ import InProgress from '../../DeliveryCard/InProgress'
 import Finished from '../../DeliveryCard/Finished'
 import Canceled from '../../DeliveryCard/Canceled'
 import Image from 'next/image'
+import TryRandom from '../../DeliveryCard/OnHold/TryRandom'
 
 export default function Home() {
   const [currentTab, setCurretTab] = useState('inProgress')
@@ -269,6 +270,7 @@ export default function Home() {
           <section style={{display: `${displayOnHoldDeliveries}`}}>
             <OnHold />
             <TryAgain />
+            <TryRandom />
 
             {/* ------- ativar quando estiver com cadastro em análise -------- */}
             {/* <div className={styles.theresNoDelivery}>
