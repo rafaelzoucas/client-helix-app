@@ -143,7 +143,7 @@ export default function Home() {
           </div>
 
           {isModalMenuVisible ? (
-            <Menu 
+            <Menu
               onClose={() => {
                 setIsModalMenuVisible(false)
                 enableBodyScroll(document)

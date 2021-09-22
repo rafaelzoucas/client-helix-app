@@ -5,7 +5,6 @@ import Image from 'next/image'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
-import Feedback from '../../../pages/Feedback'
 import Link from 'next/link'
 
 export default function Menu({id = 'modal', onClose = () => {}}) {
