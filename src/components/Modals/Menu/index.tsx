@@ -17,16 +17,21 @@ export default function Menu({id = 'modal', onClose = () => {}}) {
         <>
             <div id={id} className={styles.modalContainer} onClick={handleOutSideClick}>
                 <div className={styles.menuContainer}>
-                    <section className={styles.profile}>
-                        <Image 
-                            width={60} 
-                            height={60} 
-                            src="/img/icons/profile-user.svg"
-                            alt="Profile"
-                        />
+                    
+                    <Link href="/Profile">
+                        <section className={styles.profile}>
+                            <Image 
+                                width={60} 
+                                height={60} 
+                                src="/img/icons/profile-user.svg"
+                                alt="Profile"
+                            />
 
-                        <h1>Estabelecimento</h1>
-                    </section>
+                            <h1>Estabelecimento</h1>
+
+                            <span>Visualizar perfil</span>
+                        </section>
+                    </Link>
 
                     <section className={styles.menu}>
                         <div className={styles.menuItems}>
