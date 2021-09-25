@@ -11,6 +11,7 @@ import Finished from '../../DeliveryCard/Finished'
 import Canceled from '../../DeliveryCard/Canceled'
 import Image from 'next/image'
 import TryRandom from '../../DeliveryCard/OnHold/TryRandom'
+import Offline from '../../Modals/Offline'
 
 export default function Home() {
   const [currentTab, setCurretTab] = useState('inProgress')
@@ -267,6 +268,7 @@ export default function Home() {
         </div>
         
         <div className={styles.deliveriesContainer}>
+          <Offline />
           <section style={{display: `${displayOnHoldDeliveries}`}}>
             <OnHold />
             <TryAgain />
