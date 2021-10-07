@@ -268,7 +268,7 @@ export default function Home() {
         </div>
         
         <div className={styles.deliveriesContainer}>
-          <Offline />
+          {/* <Offline /> */}
           <section style={{display: `${displayOnHoldDeliveries}`}}>
             <OnHold />
             <TryAgain />
