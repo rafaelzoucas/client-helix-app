@@ -4,7 +4,7 @@ import styles from './home.module.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import NewDelivery from '../components/Modals/NewDelivery'
+import NewDelivery2 from '../components/Modals/NewDelivery2'
 import Deliveries from '../components/Tabs/Deliveries'
 import History from '../components/Tabs/History'
 import Finance from '../components/Tabs/Finance'
@@ -132,7 +132,7 @@ export default function Home() {
             </button>
 
             {isModalNewDeliveryVisible ? (
-              <NewDelivery 
+              <NewDelivery2 
                 onClose={() => {
                   setIsModalNewDeliveryVisible(false)
                   enableBodyScroll(document)
@@ -213,7 +213,7 @@ export default function Home() {
             </button>
 
             {isModalNewDeliveryVisible ? (
-              <NewDelivery 
+              <NewDelivery2 
                 onClose={() => {
                   setIsModalNewDeliveryVisible(false)
                   enableBodyScroll(document)
