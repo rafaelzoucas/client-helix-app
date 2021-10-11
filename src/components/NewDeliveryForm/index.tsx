@@ -30,6 +30,7 @@ export default function NewDeliveryForm({onClose = () => {}}) {
             <div className={styles.collectAddress}>
                 <div>
                     <span>
+                        <FontAwesomeIcon icon="map-marker" className={styles.icon} />
                         Endereço de coleta
                     </span>
 
@@ -45,23 +46,35 @@ export default function NewDeliveryForm({onClose = () => {}}) {
             <hr />
 
             <section className={styles.formContainer}>
-                <span>Rua</span>
+                <label>
+                    <FontAwesomeIcon icon="map-marker-alt" className={styles.icon} />
+                    Rua
+                </label>
                 <input type="text" placeholder="Rua do Endereço Do Cliente" />
-                <span className={styles.addressNotFound}>Endereço não encontrado.</span>
+                <label className={styles.addressNotFound}>Endereço não encontrado.</label>
 
                 <div>
                     <div>
-                        <span>Número</span>
+                        <label>
+                            <FontAwesomeIcon icon="map-marker-alt" className={styles.icon} />
+                            Número
+                        </label>
                         <input type="text" placeholder="123" />
                     </div>
 
                     <div className={styles.comp}>
-                        <span>Complemento (opcional)</span>
+                        <label>
+                            <FontAwesomeIcon icon="map-marker-alt" className={styles.icon} />
+                            Complemento (opcional)
+                        </label>
                         <input type="text" placeholder="Ap 12" />
                     </div>
                 </div>
 
-                <span>Observações (opcional)</span>
+                <label>
+                    <FontAwesomeIcon icon="align-left" className={styles.icon} />
+                    Observações (opcional)
+                </label>
                 <input placeholder="R$ 10,00 de troco" />
             </section>
 
