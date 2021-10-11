@@ -93,7 +93,7 @@ export default function NewDeliveryForm({onClose = () => {}}) {
 
             <div className={styles.deliveryman}>
                 <div>
-                    {/* <FontAwesomeIcon icon="user-circle" className={styles.picture} />
+                    <FontAwesomeIcon icon="user-circle" className={styles.picture} />
 
                     <div className={styles.nameAndRate}>
                         <p>João da Silva</p>
@@ -102,9 +102,9 @@ export default function NewDeliveryForm({onClose = () => {}}) {
                             <FontAwesomeIcon icon="star" />
                             4.9
                         </div>
-                    </div> */}
+                    </div>
 
-                    <p>Buscar entregador aleatório</p>
+                    {/* <p>Buscar entregador aleatório</p> */}
                 </div>
 
                 <button>

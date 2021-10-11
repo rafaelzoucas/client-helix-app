@@ -49,7 +49,6 @@ export default function Home() {
     setIsCollectAddressVisible(false)
   }
 
-
   return (
     <div className={styles.deliveriesPage}>
       <aside>
@@ -58,12 +57,12 @@ export default function Home() {
 
       <main>
         <div className={styles.groupBtn}>
-          <button onClick={showOnHold}>
+          {/* <button onClick={showOnHold}>
               Em espera
-          </button>
+          </button> */}
 
           <button onClick={showInProgress}>
-              Em andamento
+              Em progresso
           </button>
           
           <button onClick={showFinished}>
@@ -104,6 +103,10 @@ export default function Home() {
             </div> */}
           </section>
           <section style={{display: `${displayInProgressDeliveries}`}}>
+            <OnHold />
+            <TryAgain />
+            <TryRandom />
+
             <InProgress />
             <InProgress />
             <InProgress />
