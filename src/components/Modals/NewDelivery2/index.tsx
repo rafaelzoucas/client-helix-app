@@ -38,36 +38,36 @@ export default function NewDelivery({onClose = () => {}}) {
                         <p>Rua do Endereço de Coleta</p>
                     </div>
                     
-                    <button>Alterar</button>
+                    <button>
+                        <FontAwesomeIcon icon="pen" /> 
+                        Alterar
+                    </button>
                 </div>
 
                 <hr />
 
                 <section className={styles.formContainer}>
-                    <form action="">
-                        <span>Rua</span>
-                        <input type="text" placeholder="Rua do Endereço Do Cliente" />
-                        <span className={styles.addressNotFound}>Endereço não encontrado.</span>
+                    <span>Rua</span>
+                    <input type="text" placeholder="Rua do Endereço Do Cliente" />
+                    <span className={styles.addressNotFound}>Endereço não encontrado.</span>
 
+                    <div>
                         <div>
-                            <div>
-                                <span>Número</span>
-                                <input type="text" placeholder="123" />
-                            </div>
-
-                            <div className={styles.comp}>
-                                <span>Complemento (opcional)</span>
-                                <input type="text" placeholder="Ap 12" />
-                            </div>
+                            <span>Número</span>
+                            <input type="text" placeholder="123" />
                         </div>
 
-                        <span>Observações (opcional)</span>
-                        <input placeholder="R$ 10,00 de troco" />
-                    </form>
+                        <div className={styles.comp}>
+                            <span>Complemento (opcional)</span>
+                            <input type="text" placeholder="Ap 12" />
+                        </div>
+                    </div>
+
+                    <span>Observações (opcional)</span>
+                    <input placeholder="R$ 10,00 de troco" />
                 </section>
 
                 <section className={styles.paymentContainer}>
-
                     <div className={styles.radioBtnContainer}>
                         <div className={styles.radioBtnCardOnPressed}>
                             <FontAwesomeIcon icon="check-circle" />
@@ -95,18 +95,24 @@ export default function NewDelivery({onClose = () => {}}) {
 
                 <div className={styles.deliveryman}>
                     <div>
-                        <FontAwesomeIcon icon="user-circle" className={styles.picture} />
+                        {/* <FontAwesomeIcon icon="user-circle" className={styles.picture} />
 
                         <div className={styles.nameAndRate}>
                             <p>João da Silva</p>
-                            <div>
+
+                            <div className={styles.rate}>
                                 <FontAwesomeIcon icon="star" />
                                 4.9
                             </div>
-                        </div>
+                        </div> */}
+
+                        <p>Buscar entregador aleatório</p>
                     </div>
 
-                    <button>Alterar</button>
+                    <button>
+                        <FontAwesomeIcon icon="pen" /> 
+                        Alterar
+                    </button>
                 </div>
 
                 <hr />
@@ -143,7 +149,6 @@ export default function NewDelivery({onClose = () => {}}) {
                 </section>
 
                 <div className={styles.btnsContainer}>
-                    <button className={styles.cancel}>Cancelar</button>
                     <button className={styles.continue} onClick={openCollectAddressModal}>Solicitar entregador</button>
                     {/* <button className={styles.disabled}>Preencha todas as informações para continuar</button> */}
                 </div>

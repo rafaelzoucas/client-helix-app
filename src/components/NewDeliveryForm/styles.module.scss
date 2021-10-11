@@ -1,19 +1,4 @@
 .newDeliveryContainer {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100vw;
-    height: calc(100vh);
-
-    overflow-y: scroll;
-
-    padding: 1rem;
-
-    z-index: 5000;
-
-    background: var(--background);
 
     .headerContainer {
         display: flex;
@@ -338,8 +323,12 @@
                     font-weight: 500;
                     color: var(--gray-500);
                 }
+
+                
             }
+
         }
+
     }
 
     .btnsContainer {
