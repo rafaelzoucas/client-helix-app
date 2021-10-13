@@ -75,7 +75,7 @@ export default function NewDeliveryForm({onClose = () => {}}) {
                     <FontAwesomeIcon icon="align-left" className={styles.icon} />
                     Observações (opcional)
                 </label>
-                <input placeholder="R$ 10,00 de troco" />
+                <input placeholder="Digite o nome do cliente, valor e etc" />
             </section>
 
             <section className={styles.paymentContainer}>

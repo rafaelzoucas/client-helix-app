@@ -103,10 +103,15 @@
             margin-top: 0.25rem;
         }
 
-        span {
+        label {
             margin: 0.5rem 0 0.2rem 0;
             font-size: 0.75rem;
             color: var(--gray-500);
+
+            .icon {
+
+                margin-right: 0.25rem;
+            }
         }
 
         input {
