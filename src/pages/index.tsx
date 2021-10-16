@@ -4,7 +4,7 @@ import styles from './home.module.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import NewDelivery2 from '../components/Modals/NewDelivery2'
+import NewDelivery2 from '../components/Modals/NewDelivery'
 import Deliveries from '../components/Tabs/Deliveries'
 import History from '../components/Tabs/History'
 import Finance from '../components/Tabs/Finance'
@@ -150,8 +150,6 @@ export default function Home() {
               }} 
             />
           ) : null}
-
-
 
 
           {/* ------TABLINKS PARA DESKTOP------ */}

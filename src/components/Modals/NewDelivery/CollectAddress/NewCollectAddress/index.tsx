@@ -19,25 +19,49 @@ export default function NewCollectAddress({onClose = () => {}}) {
                             <FontAwesomeIcon icon="arrow-left" />
                         </button>
                         
-                        <h1>Solicitar entregador</h1>
+                        <h1>Novo endereço de coleta</h1>
                     </div>
 
                 </section> 
 
                 <section className={styles.formContainer}>
-                    <div className={styles.title}>
-                        <FontAwesomeIcon icon="map-marker-alt" />
-                        <h3>Adicionar novo endereço</h3>
+                    <section className={styles.formContainer}>
+                    <label>
+                        <FontAwesomeIcon icon="store" className={styles.icon} />
+                        Apelido (opcional)
+                    </label>
+                    <input type="text" placeholder="Meu endereço secundário" />
+                    <label>
+                        <FontAwesomeIcon icon="map-marker" className={styles.icon} />
+                        Rua
+                    </label>
+                    <input type="text" placeholder="Rua do Endereço De Coleta" />
+                    <label className={styles.addressNotFound}>Endereço não encontrado.</label>
+
+                    <div>
+                        <div>
+                            <label>
+                                <FontAwesomeIcon icon="map-marker" className={styles.icon} />
+                                Número
+                            </label>
+                            <input type="text" placeholder="123" />
+                        </div>
+
+                        <div className={styles.comp}>
+                            <label>
+                                <FontAwesomeIcon icon="map-marker" className={styles.icon} />
+                                Complemento (opcional)
+                            </label>
+                            <input type="text" placeholder="Ap 12" />
+                        </div>
                     </div>
 
-                    <form action="">
-                        <span>Apelido para o novo endereço</span>
-                        <input type="text" placeholder="Meu endereço principal" />
-                        <span>Rua com número</span>
-                        <input type="text" placeholder="Rua Do Meu Endereço, 123" />
-                        <span>Referência (opcional)</span>
-                        <input type="text" placeholder="Próximo ao Bar do Zé" />
-                    </form>
+                    <label>
+                        <FontAwesomeIcon icon="align-left" className={styles.icon} />
+                        Referência (opcional)
+                    </label>
+                    <input placeholder="Proximo ao..." />
+                </section>
                 </section>
 
                 <section className={styles.btnsContainer}>

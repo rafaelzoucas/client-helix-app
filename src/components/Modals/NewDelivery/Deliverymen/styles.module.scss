@@ -82,102 +82,58 @@
             }
         }
     
-        .collectAddress {
+        .prevData {
+            margin-top: 1.5rem;
+    
+            span {
+                font-size: 0.75rem;
+                color: var(--gray-500);
+            }
+    
+            p {
+                font-size: 0.875rem;
+                color: var(--gray-600);
+            }
+        }
+    
+        .deliveryman {
             display: flex;
             flex-direction: column;
-    
-            .collectAddressCardContainer {
+
+            .picture {
+                font-size: 2rem;
+            }
+            
+            
+            div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
                 
-                .collectAddressCard {
-                    display: flex;
-                    flex-direction: row;
+                gap: 0.5rem;
+                
+                padding: 0.6rem 0;
     
-                    background: #fff;
-    
-                    border-radius: 5px;
-                    
-                    
-                    margin-top: 0.5rem;
-                    
-                    .addressInfo {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: initial;
-                        justify-content: space-between;
-                        
-                        padding: 1rem;
-                        
-                        width: 100%;        
-            
-                        strong {
-                            font-size: 1rem;
-                            font-weight: 500;
-                            color: var(--gray-600);
-                        }
-            
-                        p {
-                            font-size: 0.875rem;
-                            color: var(--gray-500);
-                        }
-            
-                        span {
-                            font-size: 0.75rem;
-                            color: var(--gray-500);
-                        }
-                    }
-    
-                    .menuEllipsis {
-                        width: 2rem;
-                        height: 2rem;
-    
-                        color: var(--gray-400);
-                    }
+                color: var(--gray-600);
+                
+                p {
+                    font-size: 00.875rem;
+                    font-weight: 500;
                 }
-                
-                .collectAddressCardOnPressed {
-                    display: flex;
-                    flex-direction: row;
-                    
-                    background: #fff;
-                    
-                    border-radius: 5px;
-                    
-                    border: 1px solid var(--orange-700);
-                    
-                    margin-top: 0.5rem;
+
+                .nameAndRate {
     
-                    .addressInfo {
+                    .rate {
                         display: flex;
-                        flex-direction: column;
-                        align-items: initial;
-                        justify-content: space-between;
-                        
-                        padding: 1rem;
-                        
-                        width: 100%;        
-            
-                        strong {
-                            font-size: 1rem;
-                            font-weight: 500;
-                            color: var(--gray-600);
-                        }
-            
-                        p {
-                            font-size: 0.875rem;
-                            color: var(--gray-500);
-                        }
-            
-                        span {
-                            font-size: 0.75rem;
-                            color: var(--gray-500);
-                        }
-                    }
+                        align-items: center;
+                        justify-content: center;
     
-                    .menuEllipsis {
-                        width: 2rem;
-                        height: 2rem;
-    
-                        color: var(--gray-400);
+                        margin-left: 1rem;
+                        
+                        gap: 0.25rem;
+                        
+                        font-size: 0.875rem;
+                        font-weight: 500;
                     }
                 }
             }
