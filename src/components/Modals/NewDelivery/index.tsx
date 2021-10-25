@@ -46,7 +46,7 @@ export default function NewDelivery({onClose = () => {}}) {
                     </div>
                     
                     <button onClick={openCollectAddressModal}>
-                        <FontAwesomeIcon icon="pen" /> 
+                        {/* <FontAwesomeIcon icon="pen" />  */}
                         Alterar
                     </button>
                 </div>
@@ -58,7 +58,7 @@ export default function NewDelivery({onClose = () => {}}) {
                         <FontAwesomeIcon icon="map-marker-alt" className={styles.icon} />
                         Rua
                     </label>
-                    <input type="text" placeholder="Rua do Endereço Do Cliente" />
+                    <input type="text" placeholder="Rua que o entregador levará o seu pedido" />
                     <label className={styles.addressNotFound}>Endereço não encontrado.</label>
 
                     <div>
@@ -86,27 +86,29 @@ export default function NewDelivery({onClose = () => {}}) {
                     <input placeholder="Digite o nome do cliente, valor e etc" />
                 </section>
 
-                <section className={styles.paymentContainer}>
+                <section className={styles.preparationTimeContainer}>
+                    <label>
+                        <FontAwesomeIcon icon="stopwatch" className={styles.icon} />
+                        Tempo até estar disponível para coleta
+                    </label>
                     <div className={styles.radioBtnContainer}>
                         <div className={styles.radioBtnCardOnPressed}>
                             <FontAwesomeIcon icon="check-circle" />
-                            <p>Pago</p>
+                            <p>Pedido Pronto</p>
                         </div>
 
-                        <div className={styles.radioBtnCard}> {/*Quando clica muda para radioBtnCardOnPressed */}
-                            <FontAwesomeIcon icon="money-bill" />
-                            <p>Sem troco</p>
+                        <div className={styles.rangeSliderContainer}>
+                            {/* <input 
+                                type="range" 
+                                min="5" 
+                                max="60"
+                                className={styles.rangeSlider}
+                                id="slider" 
+                            /> */}
+
+                            <input type="time" ></input>
                         </div>
 
-                        <div className={styles.radioBtnCard}>
-                            <FontAwesomeIcon icon="hand-holding-usd" />
-                            <p>Com troco</p>
-                        </div>
-
-                        <div className={styles.radioBtnCard}>
-                            <FontAwesomeIcon icon="credit-card" />
-                            <p>Cartão</p>
-                        </div>
                     </div>   
                 </section>
 
@@ -129,7 +131,7 @@ export default function NewDelivery({onClose = () => {}}) {
                     </div>
 
                     <button onClick={openDeliverymenModal}>
-                        <FontAwesomeIcon icon="pen" /> 
+                        {/* <FontAwesomeIcon icon="pen" />  */}
                         Alterar
                     </button>
                 </div>
