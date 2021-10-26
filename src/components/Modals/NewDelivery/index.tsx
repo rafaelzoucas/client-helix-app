@@ -97,18 +97,17 @@ export default function NewDelivery({onClose = () => {}}) {
                             <p>Pedido Pronto</p>
                         </div>
 
-                        <div className={styles.rangeSliderContainer}>
-                            {/* <input 
-                                type="range" 
-                                min="5" 
-                                max="60"
-                                className={styles.rangeSlider}
-                                id="slider" 
-                            /> */}
+                        <div className={styles.setTimeContainer}>
+                            <button>
+                                -
+                            </button>
 
-                            <input type="time" ></input>
+                            <span>
+                                5 min
+                            </span>  
+
+                            <button>+</button>
                         </div>
-
                     </div>   
                 </section>
 
