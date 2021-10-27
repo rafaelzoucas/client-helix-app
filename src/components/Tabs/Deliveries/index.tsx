@@ -81,7 +81,7 @@ export default function Home() {
             {/* <div className={styles.theresNoDelivery}>
               <FontAwesomeIcon icon="clock" />
               <p>
-                Estamos analisando o seu cadastro, em breve entraremos em contato para ativá-lo.
+              Estamos analisando o seu cadastro, em breve entraremos em contato para ativá-lo.
               </p>
             </div> */}
 
@@ -90,23 +90,25 @@ export default function Home() {
               <FontAwesomeIcon icon="motorcycle" />
               <p>
                 Não há entregas em espera no momento.
-              </p> 
-            </div> */}
+                </p> 
+              </div> */}
 
             {/* -------- ativar quando saldo estiver insuficiente ---------- */}
             {/* <div className={styles.theresNoDelivery}>
               <FontAwesomeIcon icon="ban" />
               <p>
-                O seu saldo é insuficiente para solicitar novas entregas. 
-                <button>Adicionar crédito</button>
+              O seu saldo é insuficiente para solicitar novas entregas. 
+              <button>Adicionar crédito</button>
               </p> 
             </div> */}
           </section>
           <section style={{display: `${displayInProgressDeliveries}`}}>
+            <h2>Aguardando entregador</h2>
             <OnHold />
             <TryAgain />
             <TryRandom />
 
+            <h2>Entregas em andamento</h2>
             <InProgress />
             <InProgress />
             <InProgress />
@@ -121,7 +123,7 @@ export default function Home() {
             {/* <div className={styles.theresNoDelivery}>
               <FontAwesomeIcon icon="clock" />
               <p>
-                Estamos analisando o seu cadastro, em breve entraremos em contato para ativá-lo.
+              Estamos analisando o seu cadastro, em breve entraremos em contato para ativá-lo.
               </p>
             </div> */}
             
@@ -129,11 +131,28 @@ export default function Home() {
             {/* <div className={styles.theresNoDelivery}>
               <FontAwesomeIcon icon="motorcycle" />
               <p>
-                Não há entregas em andamento.
+              Não há entregas em andamento.
               </p> 
             </div> */}
           </section>
+          <h2>Pagamentos pendentes</h2>
           <section style={{display: `${displayFinishedDeliveries}`}}>
+            <div className={styles.paymentCard}>
+              <div>
+                <p>Nome do entregador</p>
+                <span>10 entregas em aberto</span>
+              </div>
+
+              <div className={styles.value}>
+                <div>
+                  <span>Total a pagar:</span>
+                  <p>R$ 50,50</p>
+                </div>
+                
+              </div>
+            </div>
+
+            <h2>Entregas finalizadas</h2>
             <Finished />
             <Finished />
             <Canceled />

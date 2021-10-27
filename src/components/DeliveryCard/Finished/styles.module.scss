@@ -167,7 +167,7 @@
 
             height: 3rem;
 
-            border-radius: 5px;
+            border-radius: 12px;
 
             background: var(--orange-100);
 
@@ -283,6 +283,13 @@
             border-radius: 10px;
 
             gap: 0.5rem;
+
+            height: 3rem;
+            width: 150%;
+
+            font-weight: 500;
+
+            color: var(--gray-300);
         }
         
         .cancel {                

@@ -53,13 +53,25 @@ export default function Finished() {
                         <div className={`${styles.label} ${styles.labelSuccess}`}>
                             <FontAwesomeIcon icon="check" />
 
-                            <span>{'Finalizada com sucesso'}</span>
+                            <span>{'Concluída'}</span>
                         </div>
 
                         <div className={`${styles.label} ${styles.labelTime}`}>
                             <FontAwesomeIcon icon="hourglass-end" />
 
                             <span>{'00:55'}</span>
+                        </div>
+                        
+                        {/* <div className={`${styles.label} ${styles.labelSuccess}`}>
+                            <FontAwesomeIcon icon="dollar-sign" />
+
+                            <span>{'Paga'}</span>
+                        </div> */}
+                        
+                        <div className={`${styles.label} ${styles.labelIssue}`}>
+                            <FontAwesomeIcon icon="dollar-sign" />
+
+                            <span>{'Em aberto'}</span>
                         </div>
                     </div>
                     
@@ -150,10 +162,11 @@ export default function Finished() {
 
                 <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
                     <h3 className={styles.titleDelivery}>
-                        <FontAwesomeIcon icon="coins" />
-                        <strong>Forma de pagamento</strong>
+                        <FontAwesomeIcon icon="stopwatch" />
+                        <strong>Tempo de preparo</strong>
                     </h3>
-                    <p>Cartão</p>
+                    
+                    <p>15 min</p>
                 </section>
 
                 <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
@@ -163,6 +176,20 @@ export default function Finished() {
                     </h3>
                     <p>R$ 6,75</p>
                 </section>
+
+                <div className={`${styles.btnsContainer} `}>
+                    <button>
+                        <FontAwesomeIcon icon="dollar-sign" />
+
+                        Ainda não paguei
+                    </button>
+
+                    <button className={styles.finalizeBtn}>
+                        <FontAwesomeIcon icon="dollar-sign" />
+
+                        Já paguei
+                    </button>
+                </div>
             </div>
 
             {/* ------------------ DESKTOP ----------------- */}
@@ -263,9 +290,9 @@ export default function Finished() {
                     </div>
 
                     <div className={`${styles.dataItem} `}>
-                        <FontAwesomeIcon icon="hand-holding-usd" />
+                        <FontAwesomeIcon icon="stopwatch" />
 
-                        <p>Cartão</p>
+                        <p>15 min</p>
                     </div>
 
                     <div className={`${styles.dataItem} `}>

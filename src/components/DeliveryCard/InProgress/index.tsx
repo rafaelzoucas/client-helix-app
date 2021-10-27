@@ -132,11 +132,12 @@ export default function InProgress() {
                 </section>
 
                 <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
-                    <h3 className={styles.titleDelivery}>
-                        <FontAwesomeIcon icon="coins" />
-                        <strong>Forma de pagamento</strong>
+                <h3 className={styles.titleDelivery}>
+                        <FontAwesomeIcon icon="stopwatch" />
+                        <strong>Tempo de preparo</strong>
                     </h3>
-                    <p>Cartão</p>
+                    
+                    <p>15 min</p>
                 </section>
 
                 <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
@@ -260,9 +261,9 @@ export default function InProgress() {
                     </div>
 
                     <div className={`${styles.dataItem} `}>
-                        <FontAwesomeIcon icon="hand-holding-usd" />
+                        <FontAwesomeIcon icon="stopwatch" />
 
-                        <p>Cartão</p>
+                        <p>15 min</p>
                     </div>
 
                     <div className={`${styles.dataItem} `}>
