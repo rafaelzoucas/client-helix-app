@@ -19,6 +19,75 @@
 
     gap: 0.875rem;
 
+    .paymentContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: var(--orange-700);
+        }
+
+        .toggleOn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1.5rem;
+            width: 3rem;
+    
+            background-color: var(--orange-700);
+    
+            border-radius: 10rem;
+            
+            transition: background-color 0.5s;
+    
+            .toggleCircle {
+                margin-right: -1.5rem;
+    
+                width: 1rem;
+                height: 1rem;
+    
+                border-radius: 10rem;
+    
+                background-color: var(--orange-100);
+    
+                transition: background-color 0.3s, margin-left ease-out 0.1s;
+            }
+        }
+        
+        .toggleOff {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1.5rem;
+            width: 3rem;
+    
+            background-color: var(--gray-300);
+    
+            border-radius: 10rem;
+            
+            transition: background-color 0.5s;
+            
+            .toggleCircle {
+                margin-left: -1.5rem;
+    
+                width: 1rem;
+                height: 1rem;
+    
+                border-radius: 10rem;
+    
+                background-color: var(--gray-100);
+    
+                transition: background-color 0.3s, margin-left ease-out 0.1s;
+            }
+        }
+    }
+
+
+
     section {
 
        .titleDelivery {

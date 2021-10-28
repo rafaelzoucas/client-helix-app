@@ -12,6 +12,7 @@ import RateDeliveryman from '../../Modals/RateDeliveryman'
 
 export default function Finished() {
     const [isDeliveryCardOpened, setIsDeliveryCardOpened] = useState(true)
+    const [isPaymentDone, setIsPaymentDone] = useState(false)
     const [isModalConfirmCancelOpened, setIsModalConfirmCancelOpened] = useState(false)
     const [displayDeliveryCardItems, setDisplayDeliveryCardItems] = useState('none')
 
@@ -29,10 +30,20 @@ export default function Finished() {
         setIsModalConfirmCancelOpened(true)
     }
 
+    const switchToggle = () => {
+        if(isPaymentDone) {
+            setIsPaymentDone(false)
+        } else {
+            setIsPaymentDone(true)
+        }
+      }
+
     return (
         <>
             {/* ------------------MOBILE------------------- */}
             <div className={styles.deliveryCardMobileContainer}>
+                
+
                 <section 
                     id="header" 
                     className={styles.headerContainer} 
@@ -68,10 +79,10 @@ export default function Finished() {
                             <span>{'Paga'}</span>
                         </div> */}
                         
-                        <div className={`${styles.label} ${styles.labelIssue}`}>
+                        <div className={`${styles.label} ${isPaymentDone ? styles.labelSuccess : styles.labelIssue}`}>
                             <FontAwesomeIcon icon="dollar-sign" />
 
-                            <span>{'Em aberto'}</span>
+                            <span>{isPaymentDone ? 'Pago' : 'Em aberto'}</span>
                         </div>
                     </div>
                     
@@ -85,12 +96,14 @@ export default function Finished() {
                     />
                 </section>
 
-                <section className={`${styles.titleDelivery} ${styles.idDelivery}`}>
+                
+
+                <section className={`${styles.titleDelivery} ${styles.idDelivery}`} style={{display: `${displayDeliveryCardItems}`}}>
                     <FontAwesomeIcon icon="hashtag" />
                     <strong>1973</strong>
                 </section>
 
-                <div className={styles.profileLink} style={{display: `${displayDeliveryCardItems}`}}>
+                <div className={styles.profileLink} >
                     <div className={styles.info}>
                         <Image 
                             width={28} 
@@ -177,7 +190,23 @@ export default function Finished() {
                     <p>R$ 6,75</p>
                 </section>
 
-                <div className={`${styles.btnsContainer} `}>
+                <div className={styles.paymentContainer}>
+                    <p>
+                        {isPaymentDone ? "Pagamento já foi efetuado." : "Pagamento está pendente"}
+                    </p>
+                    <div className={`${isPaymentDone ? (
+                        `${styles.toggleOn}`
+                    ) : (
+                        `${styles.toggleOff}`
+                    )}`}               
+                    onClick={switchToggle}
+                    >
+                    <div className={styles.toggleCircle} />
+                    </div>
+                    {/* <input type="checkbox" /> */}
+                </div>
+
+                {/* <div className={`${styles.btnsContainer} `}>
                     <button>
                         <FontAwesomeIcon icon="dollar-sign" />
 
@@ -189,7 +218,7 @@ export default function Finished() {
 
                         Já paguei
                     </button>
-                </div>
+                </div> */}
             </div>
 
             {/* ------------------ DESKTOP ----------------- */}

@@ -124,7 +124,7 @@
         width: 100%;
         max-width: 425px;
 
-        background-color: #fff;
+        background-color: var(--yellow-100);
         border-radius: 5px;
 
         display: flex;
@@ -142,7 +142,6 @@
             :last-child{
                 text-align: end;
             }
-
 
             span {
                 font-size: 0.875rem;

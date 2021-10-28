@@ -148,7 +148,20 @@ export default function Home() {
                   <span>Total a pagar:</span>
                   <p>R$ 50,50</p>
                 </div>
-                
+              </div>
+            </div>
+            
+            <div className={styles.paymentCard}>
+              <div>
+                <p>Nome do entregador</p>
+                <span>10 entregas em aberto</span>
+              </div>
+
+              <div className={styles.value}>
+                <div>
+                  <span>Total a pagar:</span>
+                  <p>R$ 50,50</p>
+                </div>
               </div>
             </div>
 
