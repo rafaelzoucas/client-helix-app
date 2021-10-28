@@ -203,7 +203,6 @@ export default function Finished() {
                     >
                     <div className={styles.toggleCircle} />
                     </div>
-                    {/* <input type="checkbox" /> */}
                 </div>
 
                 {/* <div className={`${styles.btnsContainer} `}>
