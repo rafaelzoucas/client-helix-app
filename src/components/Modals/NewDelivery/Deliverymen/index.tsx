@@ -24,7 +24,7 @@ export default function Deliverymen({onClose = () => {}}) {
     return(
         <>
             <div className={styles.container}>
-                <div className={styles.collectAddressContainer}>
+                <div className={styles.deliverymenContainer}>
                     <section className={styles.headerContainer}>
                         <div className={styles.backTitle}>
                             <h1>Entregadores exclusivos</h1>

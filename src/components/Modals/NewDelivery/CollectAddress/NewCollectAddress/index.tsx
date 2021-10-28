@@ -65,8 +65,10 @@ export default function NewCollectAddress({onClose = () => {}}) {
                 </section>
 
                 <section className={styles.btnsContainer}>
-                    <button className={styles.cancel} onClick={onClose}>Cancelar</button>
-                    <button className={styles.continue}>Adicionar novo endereço de coleta</button>
+                    {/* <button className={styles.cancel} onClick={onClose}>Cancelar</button> */}
+                    {/* <button className={styles.continue}>Adicionar novo endereço de coleta</button> */}
+                    <button className={styles.cancel}>Remover este endereço</button>
+                    <button className={styles.edit}>Editar este endereço</button>
                     {/* <button className={styles.disabled}>Preencha todas as informações para continuar</button> */}
                 </section>
             </div>

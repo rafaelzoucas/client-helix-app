@@ -1,5 +1,8 @@
 .newCollectAddressContainer {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     top: 0;
     left: 0;
@@ -36,6 +39,9 @@
         justify-content: space-between;
         align-items: center;
 
+        width: 95vw;
+        max-width: 425px;
+
         .backTitle {
             display: flex;
             flex-direction: row;
@@ -63,6 +69,9 @@
         flex-direction: column;
 
         margin-top: 0.5rem;
+
+        width: 95vw;
+        max-width: 425px;
 
         div {
             display: flex;
@@ -112,6 +121,11 @@
         display: flex;
         flex-direction: row;
         margin-top: 1rem;
+
+        width: 95vw;
+        max-width: 425px;
+
+        gap: 0.5rem;
         
         button {
             width: 100%;
@@ -139,6 +153,11 @@
         .recharge {
             background-color: var(--red-300);
             color: #fff;
+        }
+
+        .edit {
+            background-color: var(--green-100);
+            color: var(--green-700);
         }
 
         .continue {
