@@ -92,12 +92,12 @@ export default function NewDelivery({onClose = () => {}}) {
                         Tempo até estar disponível para coleta
                     </label>
                     <div className={styles.radioBtnContainer}>
-                        <div className={styles.radioBtnCardOnPressed}>
+                        <div className={styles.radioBtnCard}>
                             <FontAwesomeIcon icon="check-circle" />
                             <p>Pedido Pronto</p>
                         </div>
 
-                        <div className={styles.setTimeContainer}>
+                        <div className={styles.setTimeContainerOnPressed}>
                             <button>
                                 -
                             </button>
