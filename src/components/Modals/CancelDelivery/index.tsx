@@ -6,6 +6,7 @@ export default function CancelDelivery({id = 'modal', onClose = () => {}}) {
     const handleOutSideClick = (e) => {
         if(e.target.id === id) onClose()
     }
+    
     return(
         <div id={id} className={styles.modalContainer} onClick={handleOutSideClick}>
             <div className={styles.cancelContainer}>
